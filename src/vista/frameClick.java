@@ -17,6 +17,7 @@ public class frameClick extends frameBase{
 	int pts, user=1865552016;
 
 	frameClick(){
+		this.setTitle("BrainClick");
 		init_jp1();
 		init_jp2();
 		init_jp3();

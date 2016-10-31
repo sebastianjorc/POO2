@@ -1,11 +1,14 @@
 package controlador;
 
-import vista.vista;
+import javax.swing.JOptionPane;
 
 public class main {
 
 	public static void main(String[] args) {
-		vista v = new vista();
+		JOptionPane.showMessageDialog( null, 
+		"¡Bienvenido! Este es un programa de entrenamiento cerebral. \n"
+		+ "Acontinuación encontrará varios programas para ejercitar su cerebro.");
+		controlador c = new controlador();
 	}
 
 }

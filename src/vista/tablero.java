@@ -12,10 +12,11 @@ public class tablero extends Canvas {
 
 	tablero(){
 		this.setBackground(Color.decode("#E8FFFA"));
-		this.setSize(sizex,sizey);		
+		this.setSize(sizex,sizey);	
 	}
 	
 	public void paint(Graphics g){
+		
 		g.setColor(Color.DARK_GRAY);
 		for (int i = 0; i<sizex; i+=tamCuadrado){
 			for (int j= 0; j<sizey; j+=tamCuadrado){
@@ -23,6 +24,5 @@ public class tablero extends Canvas {
 			}
 		}
 		//g.fillRect(30, 10, 35, 35);
-		
 	}
 }

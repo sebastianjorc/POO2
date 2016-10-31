@@ -23,17 +23,17 @@ public class frameBase extends JFrame {
 	frameBase(){
 		super("POO2");
 		this.setIconImage(Icono);
-		this.setBounds(350, 50, 500, 700);
+		this.setBounds(350, 50, 490, 650);
 		this.getContentPane().setLayout(new GridBagLayout());
 		gbc.fill=GridBagConstraints.BOTH;
         
-        valorGrid(2, 0.2, 0, 0, 0, 1);
+        valorGrid(1, 0.2, 0, 0, 0, 1);
 		this.getContentPane().add(jp1,gbc);
 		
-        valorGrid(2, 2.0, 0, 1, 0, 3);
+        valorGrid(1, 0.5, 0, 1, 0, 3);
 		this.getContentPane().add(jp2,gbc);		
 
-        valorGrid(2, 1.0, 0, 4, 0, 2);
+        valorGrid(1, 0.3, 0, 4, 0, 2);
 		this.getContentPane().add(jp3,gbc);
 		
 		init();

@@ -27,13 +27,13 @@ public class frameBase extends JFrame {
 		this.getContentPane().setLayout(new GridBagLayout());
 		gbc.fill=GridBagConstraints.BOTH;
         
-        valorGrid(1, 0.2, 0, 0, 0, 1);
+        valorGrid(1, 0.1, 0, 0, 0, 1);
 		this.getContentPane().add(jp1,gbc);
 		
-        valorGrid(1, 0.5, 0, 1, 0, 3);
+        valorGrid(1, 1, 0, 1, 0, 5);
 		this.getContentPane().add(jp2,gbc);		
 
-        valorGrid(1, 0.3, 0, 4, 0, 2);
+        valorGrid(1, 0.035, 0, 6, 0, 2);
 		this.getContentPane().add(jp3,gbc);
 		
 		init();

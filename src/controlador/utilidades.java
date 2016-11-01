@@ -9,7 +9,7 @@ public class utilidades {
 		String Rut;	String[] rut_dv;	int rut;	char dv;
 		while (flag){
             try{
-        		Rut=JOptionPane.showInputDialog(null,"Ingrese su Rut con digito verificador. \n(Ej: 10.283.392-k): ",JOptionPane.QUESTION_MESSAGE);
+            	Rut=JOptionPane.showInputDialog(null,"Ingrese su Rut con digito verificador. \n(Ej: 10.283.392-k): ",JOptionPane.QUESTION_MESSAGE);
                 if(Rut==null){System.exit(0);}
         		rut_dv = Rut.replace(".","").split("-");
                 rut = Integer.parseInt( rut_dv[0] );
@@ -30,5 +30,4 @@ public class utilidades {
         }
         return dv == (char) (s != 0 ? s + 47 : 75);    	
     }
-
 }

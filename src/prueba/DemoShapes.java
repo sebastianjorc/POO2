@@ -1,60 +1,77 @@
 package prueba;
 
 import java.awt.Color;
-import java.awt.Dimension;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
+import java.awt.GridLayout;
 import java.awt.Shape;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.awt.geom.Rectangle2D;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Random;
+import java.util.Set;
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.SwingUtilities;
 
-public class DemoShapes {
-    public static final Color DEFAULT_COLOR = Color.BLUE;
+
+public class DemoShapes extends JPanel {
+    public static final Color DEFAULT_COLOR = Color.decode("#E8FFFA");
+    ArrayList<ShapeItem> shapes;
 	int sizex = 421;
 	int sizey = 351;
 	int tamCuadrado = 35;
+	Color	colorTrue  = Color.GREEN,
+			colorFalse = Color.RED,
+			ColorActual= Color.YELLOW;
 
-    public DemoShapes() {	
-		
-        List<ShapeItem> shapes = new ArrayList<ShapeItem>();        
-
-		for (int i = 0; i<sizex; i+=tamCuadrado){
-			for (int j= 0; j<sizey; j+=tamCuadrado){
+    public DemoShapes() {
+        shapes = new ArrayList<ShapeItem>();
+		for (int i = 0; i<sizex-2; i+=tamCuadrado){
+			for (int j= 0; j<sizey-2; j+=tamCuadrado){
 				 shapes.add(new ShapeItem(new Rectangle2D.Double(i, j, tamCuadrado, tamCuadrado),DEFAULT_COLOR));
 			}
 		}
-
-        JFrame frame = new JFrame("Shapes");
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-
         ShapesPanel panel = new ShapesPanel(shapes);
-        
-        frame.add(panel);
-        frame.setLocationByPlatform(true);
-        frame.pack();
-        frame.setVisible(true);
-        frame.setSize(sizex+30,sizey+30);
+        panel.setSize(300,200);
+        panel.setVisible(true);
+        add(panel);
+        setVisible(true);
+        setSize(sizex+1,sizey+52);
     }
 
-    public class ShapeItem {
-        private Shape shape;
-        private Color color;
+    class ShapeItem {
+    	boolean estado, presionado;
+        Shape shape;
+        Color color;
 
         public ShapeItem(Shape shape, Color color) {
             super();
+            this.presionado = false;
+            this.estado = false;
             this.shape = shape;
             this.color = color;
         }
 
-        public Shape getShape() {
+        public boolean isEstado() {
+			return estado;
+		}
+
+		public void setEstado(boolean estado) {
+			this.estado = estado;
+		}
+
+		public boolean isPresionado() {
+			return presionado;
+		}
+
+		public void setPresionado(boolean presionado) {
+			this.presionado = presionado;
+		}
+
+		public Shape getShape() {
             return shape;
         }
 
@@ -72,39 +89,35 @@ public class DemoShapes {
     }
 
     class ShapesPanel extends JPanel {
+    	
 		private static final long serialVersionUID = 1L;
 		private List<ShapeItem> shapes;
-        private Random rand = new Random();
 
         public ShapesPanel(List<ShapeItem> shapesList) {
             this.shapes = shapesList;
-
             addMouseListener(new MouseAdapter() {
                     public void mouseClicked(MouseEvent e) {
-                        Color color = getRandomColor();
                         for (ShapeItem item : shapes) {
                             if (item.getShape().contains(e.getPoint())) {
-                                item.setColor(color);
+                                item.setColor(Color.RED);
                             }
                         }
                         repaint();
                     }
-                });
-        }
-
+            });
+        }        
+        
         @Override
         protected void paintComponent(Graphics g) {
             super.paintComponent(g);
-
             Graphics2D g2 = (Graphics2D) g.create();
             
-
             for (ShapeItem item : shapes) {
                 g2.setColor(item.getColor());
                 g2.fill(item.getShape());
             }
-    		for (int i = 0; i<sizex; i+=tamCuadrado){
-    			for (int j= 0; j<sizey; j+=tamCuadrado){
+    		for (int i = 0; i<=sizex-2; i+=tamCuadrado){
+    			for (int j= 0; j<=sizey-2; j+=tamCuadrado){
     				g.drawRect(i, j, tamCuadrado, tamCuadrado);
     			}
     		}
@@ -112,22 +125,5 @@ public class DemoShapes {
             g2.dispose();
         }
 
-        @Override
-        public Dimension getPreferredSize() {
-            return new Dimension(300, 300);
-        }
-
-        private Color getRandomColor() {
-            return new Color(rand.nextFloat(), rand.nextFloat(),
-                rand.nextFloat());
-        }
-    }
-
-    public static void main(String[] args) {
-        SwingUtilities.invokeLater(new Runnable() {
-                public void run() {
-                    new DemoShapes();
-                }
-            });
     }
 }

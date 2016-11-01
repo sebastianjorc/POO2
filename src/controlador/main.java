@@ -4,6 +4,7 @@ import javax.swing.JOptionPane;
 
 public class main {
 
+	@SuppressWarnings("unused")
 	public static void main(String[] args) {
 		JOptionPane.showMessageDialog( null, 
 		"¡Bienvenido! Este es un programa de entrenamiento cerebral. \n"

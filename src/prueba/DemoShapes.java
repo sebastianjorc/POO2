@@ -7,7 +7,6 @@ import java.awt.Graphics2D;
 import java.awt.Shape;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
-import java.awt.geom.Ellipse2D;
 import java.awt.geom.Rectangle2D;
 import java.util.ArrayList;
 import java.util.List;
@@ -19,30 +18,33 @@ import javax.swing.SwingUtilities;
 
 public class DemoShapes {
     public static final Color DEFAULT_COLOR = Color.BLUE;
+	int sizex = 421;
+	int sizey = 351;
+	int tamCuadrado = 35;
 
-    public DemoShapes() {
-        List<ShapeItem> shapes = new ArrayList<ShapeItem>();
-        shapes.add(new ShapeItem(new Rectangle2D.Double(110, 1, 100, 100),
-                DEFAULT_COLOR));
-        shapes.add(new ShapeItem(new Rectangle2D.Double(110, 110, 100, 100),
-                DEFAULT_COLOR));
-        shapes.add(new ShapeItem(new Ellipse2D.Double(1, 1, 100, 100),
-                DEFAULT_COLOR));
-        shapes.add(new ShapeItem(new Ellipse2D.Double(1, 110, 100, 100),
-                DEFAULT_COLOR));
+    public DemoShapes() {	
+		
+        List<ShapeItem> shapes = new ArrayList<ShapeItem>();        
+
+		for (int i = 0; i<sizex; i+=tamCuadrado){
+			for (int j= 0; j<sizey; j+=tamCuadrado){
+				 shapes.add(new ShapeItem(new Rectangle2D.Double(i, j, tamCuadrado, tamCuadrado),DEFAULT_COLOR));
+			}
+		}
 
         JFrame frame = new JFrame("Shapes");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
         ShapesPanel panel = new ShapesPanel(shapes);
+        
         frame.add(panel);
-
         frame.setLocationByPlatform(true);
         frame.pack();
         frame.setVisible(true);
+        frame.setSize(sizex+30,sizey+30);
     }
 
-    class ShapeItem {
+    public class ShapeItem {
         private Shape shape;
         private Color color;
 
@@ -70,16 +72,15 @@ public class DemoShapes {
     }
 
     class ShapesPanel extends JPanel {
-        private List<ShapeItem> shapes;
+		private static final long serialVersionUID = 1L;
+		private List<ShapeItem> shapes;
         private Random rand = new Random();
 
         public ShapesPanel(List<ShapeItem> shapesList) {
             this.shapes = shapesList;
 
             addMouseListener(new MouseAdapter() {
-                    @Override
                     public void mouseClicked(MouseEvent e) {
-
                         Color color = getRandomColor();
                         for (ShapeItem item : shapes) {
                             if (item.getShape().contains(e.getPoint())) {
@@ -96,11 +97,17 @@ public class DemoShapes {
             super.paintComponent(g);
 
             Graphics2D g2 = (Graphics2D) g.create();
+            
 
             for (ShapeItem item : shapes) {
                 g2.setColor(item.getColor());
                 g2.fill(item.getShape());
             }
+    		for (int i = 0; i<sizex; i+=tamCuadrado){
+    			for (int j= 0; j<sizey; j+=tamCuadrado){
+    				g.drawRect(i, j, tamCuadrado, tamCuadrado);
+    			}
+    		}
 
             g2.dispose();
         }

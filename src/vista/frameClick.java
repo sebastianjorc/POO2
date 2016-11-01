@@ -14,9 +14,11 @@ import javax.swing.border.EtchedBorder;
 public class frameClick extends frameBase{
 	
 	private static final long serialVersionUID = 1L;
-	int pts, user=1865552016;
+	int pts; 
+	String user;
 
-	frameClick(){
+	frameClick(String rut){
+		this.user = rut;
 		this.setTitle("BrainClick");
 		init_jp1();
 		init_jp2();

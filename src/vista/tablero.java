@@ -1,42 +1,42 @@
 package vista;
 
-import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
+import java.awt.GridLayout;
 import java.awt.Shape;
-import java.awt.event.MouseAdapter;
-import java.awt.event.MouseEvent;
 import java.awt.geom.Rectangle2D;
 import java.util.ArrayList;
-import java.util.List;
 
 import javax.swing.JPanel;
+
+import controlador.ClickTablero;
 
 public class tablero extends JPanel{
 	private static final long serialVersionUID = 1L;
 	public static final Color DEFAULT_COLOR = Color.decode("#E8FFFA");
     ArrayList<ShapeItem> shapes;
-	int sizex = 421;
-	int sizey = 351;
-	int tamCuadrado = 35;
+	public int sizex = 421;
+	public int sizey = 351;
+	public int tamCuadrado = 35;
 	Color	colorTrue  = Color.GREEN,
 			colorFalse = Color.RED,
 			ColorActual= Color.YELLOW;
-
+	
+	
     public tablero() {
-		setLayout(new BorderLayout());
+    	setBackground(Color.decode("#FFFDE4"));
+		setLayout(new GridLayout());
         shapes = new ArrayList<ShapeItem>();
-		for (int i = 0; i<sizex-2; i+=tamCuadrado){
-			for (int j= 0; j<sizey-2; j+=tamCuadrado){
+		for (int i = 35; i<sizex+33; i+=tamCuadrado){
+			for (int j= 10; j<sizey+8; j+=tamCuadrado){
 				 shapes.add(new ShapeItem(new Rectangle2D.Double(i, j, tamCuadrado, tamCuadrado),DEFAULT_COLOR));
 			}
 		}
-        ShapesPanel panel = new ShapesPanel(shapes);
-        add(panel,BorderLayout.CENTER);
+        addMouseListener(new ClickTablero(shapes,this));
     }
 
-    class ShapeItem {
+    public class ShapeItem {
     	boolean estado, presionado;
         Shape shape;
         Color color;
@@ -82,43 +82,22 @@ public class tablero extends JPanel{
         }
     }
 
-    class ShapesPanel extends JPanel {
-    	//HACER COMIENCE A DIBUJAR EN EL CENTRO.
-		private static final long serialVersionUID = 1L;
-		private List<ShapeItem> shapes;
-
-        public ShapesPanel(List<ShapeItem> shapesList) {
-        	setBackground(Color.decode("#FFFDE4"));
-            this.shapes = shapesList;
-            addMouseListener(new MouseAdapter() {
-                    public void mouseClicked(MouseEvent e) {
-                        for (ShapeItem item : shapes) {
-                            if (item.getShape().contains(e.getPoint())) {
-                                item.setColor(Color.RED);
-                            }
-                        }
-                        repaint();
-                    }
-            });
-        }        
+    @Override
+    public void paintComponent(Graphics g) {
+        super.paintComponent(g);
+        Graphics2D g2 = (Graphics2D) g.create();
         
-        @Override
-        protected void paintComponent(Graphics g) {
-            super.paintComponent(g);
-            Graphics2D g2 = (Graphics2D) g.create();
-            
-            for (ShapeItem item : shapes) {
-                g2.setColor(item.getColor());
-                g2.fill(item.getShape());
-            }
-    		for (int i = 0; i<=sizex-2; i+=tamCuadrado){
-    			for (int j= 0; j<=sizey-2; j+=tamCuadrado){
-    				g.drawRect(i, j, tamCuadrado, tamCuadrado);
-    			}
-    		}
-
-            g2.dispose();
+        for (ShapeItem item : shapes) {
+            g2.setColor(item.getColor());
+            g2.fill(item.getShape());
         }
+		for (int i = 35; i<sizex+33; i+=tamCuadrado){
+			for (int j= 10; j<sizey+8; j+=tamCuadrado){
+				g.drawRect(i, j, tamCuadrado, tamCuadrado);
+			}
+		}
 
+        g2.dispose();
     }
+
 }

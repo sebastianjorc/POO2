@@ -19,11 +19,12 @@ public class ClickBoton implements ActionListener {
 		
 		if (btnPulsado.getText()=="STOP"){
 			tbl.t.stop();
-			//PARAR EL TABLERO
+			tbl.Crono.stop();
 		}else if (btnPulsado.getText()=="START"){
 			tbl.t.start();
-			//INICIALIZAR TABLERO. COLORES.		
+			tbl.Crono.start();	
 		}
+		
 		btnPulsado.setPress(true);
 		btn.setPress(false);
 	}

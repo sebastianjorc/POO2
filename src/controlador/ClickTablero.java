@@ -1,18 +1,15 @@
 package controlador;
 
-import java.awt.Color;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.util.ArrayList;
-
-import javax.swing.JPanel;
 
 import vista.tablero;
 import vista.tablero.ShapeItem;
 
 public class ClickTablero implements MouseListener{
 	ArrayList<ShapeItem> shapes;
-	JPanel p;
+	tablero p;
 	
 	public ClickTablero(ArrayList<ShapeItem> shapes, tablero tablero){
 		this.shapes=shapes;
@@ -23,10 +20,12 @@ public class ClickTablero implements MouseListener{
 	public void mouseClicked(MouseEvent e) {
         for (ShapeItem item : shapes) {
             if (item.getShape().contains(e.getPoint())) {
-                item.setColor(Color.RED);
+            	if (item.getColor()==p.ColorActual){
+                item.setColor(p.colorTrue);            		
+            	}else{item.setColor(p.colorFalse);}
             }
         }
-        p.repaint();        
+        p.repaint();  
 	}
 
 	@Override

@@ -1,48 +1,57 @@
 package vista;
 
 import java.awt.Color;
+import java.awt.FlowLayout;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
-import java.awt.GridLayout;
 import java.awt.Shape;
 import java.awt.geom.Rectangle2D;
 import java.util.ArrayList;
 
+import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.Timer;
 
 import controlador.ClickTablero;
+import controlador.Cronometro;
 import controlador.pintarTab;
 
 public class tablero extends JPanel{
 	private static final long serialVersionUID = 1L;
 	public static final Color DEFAULT_COLOR = Color.decode("#E8FFFA");
     ArrayList<ShapeItem> shapes;
-	public int sizex = 421;
-	public int sizey = 351;
-	public int tamCuadrado = 35;
-	public Timer t;
-	public pintarTab al;
-	Color	colorTrue  = Color.GREEN,
+	public JLabel l = new JLabel("00:00");
+	public int s=0,	m=0,	sizex = 421,	sizey = 351,	tamCuadrado = 35;
+	public Timer t,Crono;
+	public Color	colorTrue  = Color.GREEN,
 			colorFalse = Color.RED,
 			ColorActual= Color.YELLOW;
 	
 	
     public tablero() {
     	setBackground(Color.decode("#FFFDE4"));
-		setLayout(new GridLayout());
+		setLayout(new FlowLayout(FlowLayout.CENTER));
         shapes = new ArrayList<ShapeItem>();
 		for (int i = 35; i<sizex+33; i+=tamCuadrado){
-			for (int j= 10; j<sizey+8; j+=tamCuadrado){
+			for (int j= 20; j<sizey+18; j+=tamCuadrado){
 				 shapes.add(new ShapeItem(new Rectangle2D.Double(i, j, tamCuadrado, tamCuadrado),DEFAULT_COLOR));
 			}
 		}
         addMouseListener(new ClickTablero(shapes,this));
-        al = new pintarTab(this,shapes);
-		t = new Timer(870, al);
+		t = new Timer(1000, new pintarTab(this,shapes));		
+		Crono = new Timer (1000,new Cronometro(this));
+		add(l);
     }
 
-    public class ShapeItem {
+    public void pintar(ArrayList<ShapeItem> shapes2) {
+		for (ShapeItem item : shapes2){
+			if (item.color!=DEFAULT_COLOR){
+				item.color=DEFAULT_COLOR;
+			}
+		}
+    }
+
+	public class ShapeItem {
     	boolean estado, presionado;
         Shape shape;
         Color color;
@@ -98,12 +107,11 @@ public class tablero extends JPanel{
             g2.fill(item.getShape());
         }
 		for (int i = 35; i<sizex+33; i+=tamCuadrado){
-			for (int j= 10; j<sizey+8; j+=tamCuadrado){
+			for (int j= 20; j<sizey+18; j+=tamCuadrado){
 				g.drawRect(i, j, tamCuadrado, tamCuadrado);
 			}
 		}
 
         g2.dispose();
     }
-
 }

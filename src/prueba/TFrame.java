@@ -11,7 +11,7 @@ import javax.swing.Timer;
 
 public class TFrame extends JFrame{
 	private static final long serialVersionUID = 1L;
-	int m,s;	JLabel l;	Timer t;	JButton b1,b2;	JPanel jp;
+	JLabel l;	Timer t;	JButton b1,b2;	JPanel jp;
 	
 	public TFrame(){
 		super();		
@@ -51,13 +51,9 @@ public class TFrame extends JFrame{
 	}
 	
 	public void play(){
+		int m,s;
 		for (m=0;m<1;m++){
 			for (s=0;s<60;s++){				
-				if (m<10 && s<10){	l.setText("0"+m+":0"+s);}
-				else if (m<10){		l.setText("0"+m+":"+s);}
-				else if (s<10){		l.setText(m+":0"+s);}
-				else{ 				l.setText(m+":"+s);}
-				
 				delayS();
 				l.repaint();
 			}

@@ -9,8 +9,10 @@ import java.awt.geom.Rectangle2D;
 import java.util.ArrayList;
 
 import javax.swing.JPanel;
+import javax.swing.Timer;
 
 import controlador.ClickTablero;
+import controlador.pintarTab;
 
 public class tablero extends JPanel{
 	private static final long serialVersionUID = 1L;
@@ -19,6 +21,8 @@ public class tablero extends JPanel{
 	public int sizex = 421;
 	public int sizey = 351;
 	public int tamCuadrado = 35;
+	public Timer t;
+	public pintarTab al;
 	Color	colorTrue  = Color.GREEN,
 			colorFalse = Color.RED,
 			ColorActual= Color.YELLOW;
@@ -34,6 +38,8 @@ public class tablero extends JPanel{
 			}
 		}
         addMouseListener(new ClickTablero(shapes,this));
+        al = new pintarTab(this,shapes);
+		t = new Timer(870, al);
     }
 
     public class ShapeItem {

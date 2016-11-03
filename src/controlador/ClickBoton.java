@@ -1,6 +1,5 @@
 package controlador;
 
-import java.awt.Color;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -19,10 +18,10 @@ public class ClickBoton implements ActionListener {
 		BotonP btnPulsado=(BotonP) e.getSource();
 		
 		if (btnPulsado.getText()=="STOP"){
-			tbl.setBackground(Color.BLACK);
+			tbl.t.stop();
 			//PARAR EL TABLERO
 		}else if (btnPulsado.getText()=="START"){
-			tbl.setBackground(Color.orange);
+			tbl.t.start();
 			//INICIALIZAR TABLERO. COLORES.		
 		}
 		btnPulsado.setPress(true);

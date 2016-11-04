@@ -9,27 +9,26 @@ import javax.swing.JPanel;
 import javax.swing.border.EtchedBorder;
 
 import controlador.ClickBoton;
+import modelo.Partida;
 
 
 public class frameClick extends frameBase{
 	
 	private static final long serialVersionUID = 1L;
 
-	frameClick(String rut){
-		this.user = rut;
-		this.setTitle("BrainClick");
+	frameClick(Partida unaPartida){
+		super(unaPartida);
 		init_jp1();
 		init_jp2();
-		init_jp3();		
+		init_jp3();
 	}
 	
 	public void init_jp2(){
 		jp2.setBorder(BorderFactory.createEtchedBorder(EtchedBorder.LOWERED));
 		jp2.setLayout(new GridBagLayout());		
 		tablero untablero = new tablero(t2,pts);
-		//untablero.listener
-		gbc.fill=GridBagConstraints.BOTH;
-        
+		
+		gbc.fill=GridBagConstraints.BOTH;        
         valorGrid(1, 1, 0, 0, 0, 4);
 		jp2.add(untablero,gbc);
 		

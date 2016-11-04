@@ -11,5 +11,4 @@ public class Partida {
 		tPartida = i; pts=0; user=string;
 		if (i==0){tipoPartida="BrainClick";}
 	}
-
 }

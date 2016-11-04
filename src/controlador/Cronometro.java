@@ -4,6 +4,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 
 import vista.tablero;
 
@@ -26,7 +27,11 @@ public class Cronometro implements ActionListener{
 		else{ 				l.setText(m+":"+s);}
 		
 		l.repaint();		
-		if (m==1){	t.Crono.stop();	t.t.stop();	}		
+		if (m==1){	
+			t.Crono.stop();	t.t.stop();	
+			JOptionPane.showMessageDialog(null,"Su puntaje ha sido:"+t.pts+"/60");
+			t.pts=0;	tablero.lPts.setText("               PUNTAJE: "+ t.pts);
+		}		
 	}
 
 }

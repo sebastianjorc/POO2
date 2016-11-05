@@ -4,12 +4,14 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 import javax.swing.JOptionPane;
+import javax.swing.JScrollPane;
+import javax.swing.JTable;
 
 import modelo.ConexionSQL;
 import vista.frameBase;
 
 public class ClickItemBar implements ActionListener {
-	int op ;	controlador nc;	frameBase fb;	utilidades u = new utilidades();	String srt = null;	ConexionSQL con=null;
+	int op ;	controlador nc;	frameBase fb;	utilidades u = new utilidades();	JTable table = null;	ConexionSQL con=null;
 
 	public ClickItemBar(int i, frameBase frameBase) {
 		this.op=i;
@@ -33,15 +35,13 @@ public class ClickItemBar implements ActionListener {
         break;
  
         case 4:
-        	con = new ConexionSQL();
-			srt = con.consulta(fb.datos.user);
-    		JOptionPane.showMessageDialog(null,"Ranking de usuario:\n"+srt);
+        	con = new ConexionSQL();	table = con.consulta(fb.datos.user);
+    		JOptionPane.showMessageDialog(null,new JScrollPane(table));
         break;
  
         case 5:
-        	con = new ConexionSQL();
-			srt = con.consulta(null);
-			JOptionPane.showMessageDialog(null,"Ranking General:\n"+srt);    
+        	con = new ConexionSQL();	table = con.consulta(null);
+    		JOptionPane.showMessageDialog(null, new JScrollPane(table));
         break;
  
         case 6:

@@ -9,7 +9,7 @@ public class controlador {
 	
 	controlador(){
 		//new vista(u.opcionesJuego(),u.validar_rut());	
-		unaPartida = new Partida(0,"u.validar_rut()");
+		unaPartida = new Partida(0,"un_rut");
 		new vista(unaPartida);	
 	}
 }

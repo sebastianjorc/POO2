@@ -43,6 +43,8 @@ public class ConexionSQL {
 	      preparedStmt.execute();
 		con.close();
 		} catch (SQLException e) {
+			System.out.println("Error al incertar");
+			System.out.println("Error: "+e);
 			e.printStackTrace();
 		}
 	}
@@ -60,25 +62,24 @@ public class ConexionSQL {
 	
 
 	public String consulta(String user){
-		String srt = null;
+		String srt = null;    	String aux = null;
 		Statement s = null;		ResultSet rs = null;
 		System.out.print(user);
 		try {
 			connect();
 			s = con.createStatement();	
 			if (user==null)
-				rs = s.executeQuery ("select * from partida WHERE pts ORDER BY balance DESC");
-			else{	rs = s.executeQuery ("select * from partida WHERE user = '"+user+"' WHERE pts ORDER BY balance DESC");
-			    	String aux = null;
-			    	while (rs.next()){  
-			    		aux=srt;
-			    		if(aux!=null)srt=aux+"            \n"+(rs.getInt (1) + " " 
-			    		+ rs.getString (2)+ " " + rs.getDate(3)+ " " + rs.getInt(4));
-			    		else {srt=(rs.getInt (1) + " " + rs.getString (2)+ " " + rs.getDate(3)+ " " + rs.getInt(4));}
-					}
-					con.close();
+					rs = s.executeQuery ("select * from partida ORDER BY pts DESC");
+			else	rs = s.executeQuery ("select * from partida WHERE user = '"+user+"' ORDER BY pts DESC");
+	    	while (rs.next()){  
+	    		aux=srt;
+	    		if(aux!=null)srt=aux+"            \n"+(rs.getString (1) + " " 
+	    		+ rs.getString (2)+ " " + rs.getDate(3)+ " " + rs.getInt(4));
+	    		else {srt=(rs.getString (1) + " " + rs.getString (2)+ " " + rs.getDate(3)+ " " + rs.getInt(4));}
 			}
-		} catch (Exception e1) {		
+			con.close();
+		} catch (Exception e1) {
+			System.out.println("Error: "+e1); 
 			e1.printStackTrace();
 		}
 		return srt;

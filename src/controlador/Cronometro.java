@@ -34,6 +34,7 @@ public class Cronometro implements ActionListener{
 			JOptionPane.showMessageDialog(null,"Su puntaje ha sido:"+t.datos.pts+"/60");
 			con.insertar(t.datos.user, t.datos.tipoPartida, t.datos.pts);
 			t.datos.pts=0;	tablero.lPts.setText("               PUNTAJE: "+ t.datos.pts);
+			s=0; m=0;	l.setText("00:00");
 		}		
 	}
 

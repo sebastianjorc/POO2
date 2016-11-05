@@ -43,14 +43,12 @@ public abstract class frameBase extends JFrame{
     				jp2 	= new JPanel(),
     				jp3 	= new JPanel();
     GridBagConstraints gbc	= new GridBagConstraints();
-    public String user;	int pts;	public JLabel t1,t2;
-	
-	
+    public JLabel t1,t2;	public Partida datos;
+    
 	frameBase(Partida unaPartida){
+		this.datos=unaPartida;
 		this.setIconImage(Icono);
-		this.setTitle(unaPartida.tipoPartida);
-		this.user	=	unaPartida.user;
-		this.pts	=	unaPartida.pts;
+		this.setTitle(datos.tipoPartida);
 		
 		this.setBounds(350, 50, 490, 670);
 		InicializarBar();	this.setJMenuBar(miBar);
@@ -105,8 +103,8 @@ public abstract class frameBase extends JFrame{
 	void init_jp1(){
 		jp1.setBorder(BorderFactory.createEtchedBorder(EtchedBorder.LOWERED));
 		jp1.setLayout(new GridLayout());
-		t1	= new JLabel("               USUARIO: "+ user);
-		t2	= new JLabel("               PUNTAJE: "+ pts);
+		t1	= new JLabel("               USUARIO: "+ datos.user);
+		t2	= new JLabel("               PUNTAJE: "+ datos.pts);
 		jp1.add(t1);	jp1.add(t2);
 	}
 	

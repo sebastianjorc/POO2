@@ -6,6 +6,7 @@ import java.awt.event.ActionListener;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 
+import modelo.ConexionSQL;
 import vista.tablero;
 
 public class Cronometro implements ActionListener{
@@ -27,10 +28,12 @@ public class Cronometro implements ActionListener{
 		else{ 				l.setText(m+":"+s);}
 		
 		l.repaint();		
-		if (m==1){	
+		if (s==10){	
+			ConexionSQL con = new ConexionSQL();
 			t.Crono.stop();	t.t.stop();	
-			JOptionPane.showMessageDialog(null,"Su puntaje ha sido:"+t.pts+"/60");
-			t.pts=0;	tablero.lPts.setText("               PUNTAJE: "+ t.pts);
+			JOptionPane.showMessageDialog(null,"Su puntaje ha sido:"+t.datos.pts+"/60");
+			con.insertar(t.datos.user, t.datos.tipoPartida, t.datos.pts);
+			t.datos.pts=0;	tablero.lPts.setText("               PUNTAJE: "+ t.datos.pts);
 		}		
 	}
 

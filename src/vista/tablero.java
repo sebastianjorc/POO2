@@ -15,6 +15,7 @@ import javax.swing.Timer;
 import controlador.ClickTablero;
 import controlador.Cronometro;
 import controlador.pintarTab;
+import modelo.Partida;
 
 public class tablero extends JPanel{
 	private static final long serialVersionUID = 1L;
@@ -22,15 +23,16 @@ public class tablero extends JPanel{
 	public static JLabel lPts;
     ArrayList<ShapeItem> shapes;
 	public JLabel l = new JLabel("00:00");
-	public int s=0,	m=0,	sizex = 421,	sizey = 351,	tamCuadrado = 35,	pts;
+	public int s=0,	m=0,	sizex = 421,	sizey = 351,	tamCuadrado = 35;
 	public Timer t,Crono;
 	public Color	colorTrue  = Color.GREEN,
 			colorFalse = Color.RED,
 			ColorActual= Color.YELLOW;
+	public Partida datos;
 	
 
-    public tablero(JLabel t2, int pts) {
-    	this.pts=pts;	this.lPts=t2;
+    public tablero(JLabel t2, Partida datos) {
+    	this.datos=datos;	tablero.lPts=t2;
     	setBackground(Color.decode("#FFFDE4"));
 		setLayout(new FlowLayout(FlowLayout.CENTER));
         shapes = new ArrayList<ShapeItem>();

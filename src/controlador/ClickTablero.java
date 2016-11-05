@@ -22,11 +22,11 @@ public class ClickTablero implements MouseListener{
             if (item.getShape().contains(e.getPoint())) {
             	if (item.getColor()==p.ColorActual){
                 item.setColor(p.colorTrue);
-                p.pts++;
-            	}else{item.setColor(p.colorFalse);p.pts--;}
+                p.datos.pts++;
+            	}else{item.setColor(p.colorFalse);p.datos.pts--;}
             }
         }
-        tablero.lPts.setText("               PUNTAJE: "+ p.pts);
+        tablero.lPts.setText("               PUNTAJE: "+ p.datos.pts);
         p.repaint();  
 	}
 

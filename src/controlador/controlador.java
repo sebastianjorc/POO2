@@ -12,5 +12,4 @@ public class controlador {
 		unaPartida = new Partida(0,"u.validar_rut()");
 		new vista(unaPartida);	
 	}
-
 }

@@ -55,12 +55,13 @@ public class tableroMov extends JPanel {
         //Valores del pentagono
         int valoresX[] = { 260, 210, 230, 290, 310 };
         int valoresY[] = { 30, 70, 120, 120, 70 };
+
         poligono1 = new Polygon( valoresX, valoresY, 5 );
         shapes.add(new ShapeItem( poligono1, Color.blue ));
   
         //Valores de estrella
-        int puntosX[] = { 55, 67, 109, 73, 83, 55, 27, 37, 1, 43 };
-        int puntosY[] = { 0, 36, 36, 54, 96, 72, 96, 54, 36, 36 };
+        int puntosX[] = { 355, 367, 409, 373, 383, 355, 327, 337, 301, 343 };
+        int puntosY[] = { 50, 86, 86, 104, 146, 122, 146, 104, 86, 86 };
         estrella = new GeneralPath();  // crear objeto GeneralPath
           
         // establecer la coordenada inicial de la ruta general
@@ -71,6 +72,8 @@ public class tableroMov extends JPanel {
         estrella.closePath();  // cerrar la figura
         
         shapes.add(new ShapeItem(estrella, Color.blue));
+        
+        
         shapes.add(new ShapeItem(new Rectangle2D.Double( 80, 30, 65, 100 ),Color.CYAN));
         //elipse 2D
         shapes.add(new ShapeItem(new Ellipse2D.Double(5, 30, 65, 100),Color.pink));
@@ -95,8 +98,7 @@ public class tableroMov extends JPanel {
     }
 
     @Override
-    public void paintComponent(Graphics g) {
-    	
+    public void paintComponent(Graphics g) {    	
     	super.paintComponent(g);  // llamar al metodo paint de la superclase    	  
     	Graphics2D g2d = (Graphics2D) g.create();  // convertir g a Graphics2D    
     	g2d.setStroke( new BasicStroke( 3.0f ) );   //ancho de las lineas    	
@@ -110,7 +112,8 @@ public class tableroMov extends JPanel {
         //pinto cuadros rellenos        
         for (ShapeItem item : shapes) {
             g2d.setColor(item.color);
-            g2d.fill(item.shape);	}
+        	if(item.color==Color.black)	g2d.draw(item.shape);       		
+        	else g2d.fill(item.shape);	}
         
         g2d.dispose();
     }

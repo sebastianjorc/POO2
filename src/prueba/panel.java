@@ -34,7 +34,7 @@ public class panel extends JPanel implements ActionListener {
         int valoresY[] = { 30, 70, 120, 120, 70 };
         Polygon poligono1 = new Polygon( valoresX, valoresY, 5 );
         figuras.add(new figura( poligono1, Color.blue,4));
-  
+ 
         //Valores de estrella
         int puntosX[] = { 355, 367, 409, 373, 383, 355, 327, 337, 301, 343 };
         int puntosY[] = { 50, 86, 86, 104, 146, 122, 146, 104, 86, 86 };

@@ -54,4 +54,5 @@ public class frameClick extends frameBase{
 				+"cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non\n"
 				+"proident, sunt in culpa qui officia deserunt mollit anim id est laborum.\n";
 	}
+
 }

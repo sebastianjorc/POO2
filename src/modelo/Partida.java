@@ -9,6 +9,7 @@ public class Partida {
 	
 	public Partida(int i, String string){
 		tPartida = i; pts=0; user=string;
-		if (i==0){tipoPartida="BrainClick";}
+		if (i==0)tipoPartida="BrainClick";
+		else if (i==1) tipoPartida="BrainClickMov";
 	}
 }

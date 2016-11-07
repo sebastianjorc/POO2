@@ -3,6 +3,7 @@ package prueba;
 import java.awt.Color;
 import java.awt.Polygon;
 import java.awt.Shape;
+import java.awt.geom.AffineTransform;
 import java.awt.geom.Ellipse2D;
 import java.awt.geom.GeneralPath;
 import java.awt.geom.Line2D;
@@ -10,7 +11,7 @@ import java.awt.geom.Rectangle2D;
 
 public class figura {
 	Shape shape;	Color color;	int tipo;
-	int xVel=14;		int yVel=14;
+	int xVel=8;		int yVel=8;
 	int x, y;
 	
 	figura(Shape shape, Color color, int tipo){
@@ -23,9 +24,15 @@ public class figura {
 	//EL UPDATE SOLO SIRVE PARA OBJETOS CUADRADOS DE UNA DIMENCION, ADAPTAR.
 	//CREAR POR FIGURA, NUEVA FUNCIÓN.
 	public void update(){
+		
 		x=x+xVel;	y=y+yVel;
-		if(x<0 || x>TFrame.MAX_X-100)	xVel=-xVel;
-		if(y<0 || y>TFrame.MAX_Y -50)	yVel=-yVel;
+		if(tipo==0 || tipo == 4){
+			if(x<60 || x>TFrame.MAX_X-65)	xVel=-xVel;
+			if(y<0 || y>TFrame.MAX_Y -150)	yVel=-yVel;
+		}else{
+			if(x<0 || x>TFrame.MAX_X-75)	xVel=-xVel;
+			if(y<0  || y>TFrame.MAX_Y -130)	yVel=-yVel;
+		}
 		
 		shape.getBounds().setLocation(x, y);
 		this.setShape(nuevoShape(tipo));
@@ -39,8 +46,9 @@ public class figura {
 	        estrella.moveTo(puntosX[0],puntosY[0] );
 	        for ( int a = 1; a < puntosX.length; a++ )
 	        	estrella.lineTo(puntosX[a],puntosY[a]);     
+	        estrella.moveTo(x,y);	        
 	        estrella.closePath();
-	        estrella.moveTo(x,y);
+	        
 			return estrella;
 		}
 		else if (op==1)	return new Rectangle2D.Double(x,y, 65,100);		
@@ -50,7 +58,7 @@ public class figura {
 
 	        int valoresX[] = { x, x-50, x-30, x+30, x+50};
 	        int valoresY[] = { y, y+40, y+90, y+90, y+40};
-	        Polygon poligono1 = new Polygon( valoresX, valoresY, 5 );
+	        Polygon poligono1 = new Polygon( valoresX, valoresY, 5);
 	        poligono1.translate(xVel,yVel);
 	        return poligono1;
 	        
@@ -77,22 +85,22 @@ public class figura {
 		this.yVel = yVel;
 	}
 
-	public Shape getShape() {
+	public Shape 	getShape() {
 		return shape;
 	}
-	public Color getColor() {
+	public Color 	getColor() {
 		return color;
 	}
-	public double	 getX	 () {
+	public double	getX	() {
 		return x;
 	}
-	public double	 getY	 () {
+	public double	getY	() {
 		return y;
 	}
-	public int	 getxVel () {
+	public int	 	getxVel () {
 		return xVel;
 	}
-	public int	 getyVel () {
+	public int	 	getyVel () {
 		return yVel;
 	}
 	

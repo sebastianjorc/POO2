@@ -37,14 +37,14 @@ public class panel extends JPanel implements ActionListener {
  
         //Valores de estrella
         int puntosX[] = { 355, 367, 409, 373, 383, 355, 327, 337, 301, 343 };
-        int puntosY[] = { 50, 86, 86, 104, 146, 122, 146, 104, 86, 86 };
+        int puntosY[] = {  50,	86,  86, 104, 146, 122, 146, 104,  86,  86 };
         GeneralPath estrella = new GeneralPath();  // crear objeto GeneralPath
         estrella.moveTo(puntosX[0],puntosY[0] );
         for ( int a = 1; a < puntosX.length; a++ )
         	estrella.lineTo(puntosX[a],puntosY[a]);     
         estrella.closePath();
         
-        figuras.add(new figura(estrella, Color.blue,0));        
+        figuras.add(new figura(estrella, Color.MAGENTA,0));        
         figuras.add(new figura(new Rectangle2D.Double(80, 30, 65,100),Color.CYAN, 1));
         figuras.add(new figura(new Ellipse2D.Double	 (5	, 30, 65,100),Color.pink, 2));
         figuras.add(new figura(new Line2D.Double	 (200,30,150,130),Color.black,3));
@@ -56,14 +56,14 @@ public class panel extends JPanel implements ActionListener {
         super.paintComponent(g);
         Graphics2D g2 = (Graphics2D) g.create();
         
-        for (figura item : figuras) {        	
+        for (figura item : figuras) {
+        	
+            g2.setColor(item.getColor()); 	
         	if 		(item.tipo==0)	g2.fill(item.getShape());
         	else if	(item.tipo==1)	g2.fill(item.getShape());
         	else if	(item.tipo==2)	g2.fill(item.getShape());
         	else if	(item.tipo==3)	g2.fill(item.getShape());
-        	else if	(item.tipo==4)	g2.fill(item.getShape());
-        	
-            g2.setColor(item.getColor());
+        	else if	(item.tipo==4)	g2.fill(item.getShape());   
         }
 		
 	}

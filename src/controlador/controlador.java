@@ -8,8 +8,8 @@ public class controlador {
 	Partida unaPartida;
 	
 	controlador(){
+		unaPartida = new Partida(u.opcionesJuego(),u.validar_rut());
+		new vista(unaPartida);
 		//new vista(u.opcionesJuego(),u.validar_rut());	
-		unaPartida = new Partida(1,"un_rut");
-		new vista(unaPartida);	
 	}
 }

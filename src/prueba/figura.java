@@ -3,7 +3,6 @@ package prueba;
 import java.awt.Color;
 import java.awt.Polygon;
 import java.awt.Shape;
-import java.awt.geom.AffineTransform;
 import java.awt.geom.Ellipse2D;
 import java.awt.geom.GeneralPath;
 import java.awt.geom.Line2D;
@@ -25,7 +24,12 @@ public class figura {
 	//CREAR POR FIGURA, NUEVA FUNCIÓN.
 	public void update(){
 		
-		x=x+xVel;	y=y+yVel;
+	
+		if (tipo==0){ 		x=50;	y=y+yVel;	}
+		else if(tipo==2){	x=x+xVel;	y=0;	}
+		else if(tipo==4){ 	x=x-xVel;	y=y+yVel;}
+		else{ x=x+xVel;	y=y+yVel;}
+		
 		if(tipo==0 || tipo == 4){
 			if(x<60 || x>TFrame.MAX_X-65)	xVel=-xVel;
 			if(y<0 || y>TFrame.MAX_Y -150)	yVel=-yVel;
@@ -41,14 +45,13 @@ public class figura {
 	public Shape nuevoShape(int op){
 		if (op==0){
 	        int puntosX[] = {	x,	x+12,	x+54,	x+18, 	x+28, 	x, 		x-28, 	x-18,	x-54,	x-12 };
-	        int puntosY[] = {	y,	y+36,	y+36,	y+54, 	y+96, 	y+72, 	y+96, 	y+54,	y+36,	y+36};
+	        int puntosY[] = {	y,	y+36,	y+36,	y+54, 	y+96, 	y+72, 	y+96, 	y+54,	y+36,	y+36 };
 	        GeneralPath estrella = new GeneralPath();  // crear objeto GeneralPath
 	        estrella.moveTo(puntosX[0],puntosY[0] );
 	        for ( int a = 1; a < puntosX.length; a++ )
 	        	estrella.lineTo(puntosX[a],puntosY[a]);     
 	        estrella.moveTo(x,y);	        
 	        estrella.closePath();
-	        
 			return estrella;
 		}
 		else if (op==1)	return new Rectangle2D.Double(x,y, 65,100);		

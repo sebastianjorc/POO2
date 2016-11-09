@@ -36,6 +36,6 @@ public class utilidades {
     	ImageIcon icon = new ImageIcon("img/brainIcon.png");
     	return 	JOptionPane.showOptionDialog(null,"Seleccione una opcion:", "Selección",
     			JOptionPane.YES_NO_CANCEL_OPTION,JOptionPane.QUESTION_MESSAGE,
-    			icon, new String[] { "BrainClicks" }, null);
+    			icon, new String[] { "BrainClicks","BrainMovClick" }, null);
     }
 }

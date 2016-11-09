@@ -7,7 +7,7 @@ public class TFrame extends JFrame{
 	public static int MAX_X=600;
 	public static int MAX_Y=600;
 	
-	TFrame(){
+	public TFrame(){
 		this.setSize(MAX_X,MAX_Y);
 		this.setResizable(false);
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);

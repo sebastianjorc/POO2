@@ -7,7 +7,6 @@ import javax.swing.JOptionPane;
 
 import modelo.ConexionSQL;
 import vista.figura;
-import vista.tablero;
 import vista.tableroMov;
 
 public class mov implements ActionListener{

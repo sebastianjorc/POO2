@@ -26,6 +26,7 @@ public class ClickBoton implements ActionListener {
 		BotonP btnPulsado=(BotonP) e.getSource();
 		
 		if (btnPulsado.getText()=="STOP"){
+			//poner algo
 			t.stop();
 			Crono.stop();
 		}else if (btnPulsado.getText()=="START"){

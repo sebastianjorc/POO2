@@ -35,17 +35,21 @@ public class tablero extends JPanel{
     	this.datos=datos;	lPts=t2;
     	setBackground(Color.decode("#FFFDE4"));
 		setLayout(new FlowLayout(FlowLayout.CENTER));
+		inicializar_tablero();
+        addMouseListener(new ClickTablero(shapes,this));
+		t = new Timer(1000, new pintarTab(this,shapes));
+		Crono = new Timer (1000,new Cronometro(this));
+		add(l);
+    }
+
+	public void inicializar_tablero() {
         shapes = new ArrayList<ShapeItem>();
 		for (int i = 35; i<sizex+33; i+=tamCuadrado){
 			for (int j= 20; j<sizey+18; j+=tamCuadrado){
 				 shapes.add(new ShapeItem(new Rectangle2D.Double(i, j, tamCuadrado, tamCuadrado),DEFAULT_COLOR));
 			}
-		}
-        addMouseListener(new ClickTablero(shapes,this));
-		t = new Timer(1000, new pintarTab(this,shapes));		
-		Crono = new Timer (1000,new Cronometro(this));
-		add(l);
-    }
+		}		
+	}
 
 	public void pintar(ArrayList<ShapeItem> shapes2) {
 		for (ShapeItem item : shapes2){

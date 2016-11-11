@@ -15,7 +15,6 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.Timer;
 
-import controlador.ClickTablero;
 import controlador.ClickTableroMov;
 import controlador.Cronometro;
 import controlador.mov;

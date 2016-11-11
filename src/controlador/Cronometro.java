@@ -39,6 +39,9 @@ public class Cronometro implements ActionListener{
 	}
 
 	public void actionPerformed(ActionEvent e) {
+		if (datos.tipoPartida=="BrainClickMov"){
+			datos.pts++; tableroMov.lPts.setText	("               PUNTAJE: "+ datos.pts);
+		}
 		if (s==60){	s=0;	m++;	}		else{s++;}
 		
 		if (m<10 && s<10){	l.setText("0"+m+":0"+s);}
@@ -47,7 +50,7 @@ public class Cronometro implements ActionListener{
 		else			 {	l.setText(m+":"+s);		}
 		l.repaint();
 		
-		if (s==10){
+		if (m==1){
 			ConexionSQL con = new ConexionSQL();
 			t.stop();
 			if (tipo==1)tc.Crono.stop();
@@ -57,8 +60,7 @@ public class Cronometro implements ActionListener{
 			con.insertar(datos.user, datos.tipoPartida, datos.pts);
 						
 			datos.pts=0;
-			if (tipo==1)tablero.lPts.setText	("               PUNTAJE: "+ datos.pts);
-			else 		tableroMov.lPts.setText	("               PUNTAJE: "+ datos.pts);
+			tableroMov.lPts.setText	("               PUNTAJE: "+ datos.pts);
 			
 			s=0; m=0;	l.setText("00:00");
 		}

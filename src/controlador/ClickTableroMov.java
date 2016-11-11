@@ -37,7 +37,6 @@ public class ClickTableroMov implements MouseListener {
             	else 
                 	item.xVel=-item.getxVel();
             	item.update();
-            	//p.repaint();
             }
         }
 

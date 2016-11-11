@@ -15,6 +15,8 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.Timer;
 
+import controlador.ClickTablero;
+import controlador.ClickTableroMov;
 import controlador.Cronometro;
 import controlador.mov;
 import modelo.Partida;
@@ -38,7 +40,8 @@ public class tableroMov extends JPanel {
         figuras = new ArrayList<figura>();		
         figuras = generarShapes();        
         t		= new Timer(100,new mov(this));		
-		Crono = new Timer (1000,new Cronometro(this));		
+		Crono = new Timer (1000,new Cronometro(this));
+        addMouseListener(new ClickTableroMov(figuras,this));
 		add(l);
     }
 

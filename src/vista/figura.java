@@ -9,19 +9,18 @@ import java.awt.geom.Rectangle2D;
 
 public class figura {
 	Shape shape;	Color color;
-	int xVel=10;		int yVel=8;
-	int x, y, xl, yl;
-	public int tipo;
+	public int xVel=5, yVel=5;
+	int x, y, xl, yl;	public int tipo;
 	
 	
-	figura(Shape shape, Color color, int tipo){
+	public figura(Shape shape, Color color, int tipo){
 		x =(int)shape.getBounds2D().getX();
 		y =(int)shape.getBounds2D().getY();
 		yl=(int)shape.getBounds2D().getHeight();
 		xl=(int)shape.getBounds2D().getWidth();
 
-		this.setXl(xl-30);
-		this.setYl(yl-30);
+		this.setXl(xl-50);
+		this.setYl(yl-50);
 		
 		this.tipo =tipo;
 		this.shape=shape;

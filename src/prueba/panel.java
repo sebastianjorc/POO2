@@ -3,6 +3,9 @@ package prueba;
 import javax.swing.JPanel;
 import javax.swing.Timer;
 
+import controlador.ClickTableroMov;
+import vista.figura;
+
 import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
@@ -23,6 +26,7 @@ public class panel extends JPanel implements ActionListener {
         figuras = new ArrayList<figura>();
         t		= new Timer(100,this);
         figuras = this.generarShapes();
+        addMouseListener(new ClickTableroMov(figuras,this));
 		t.start();
 	}
 

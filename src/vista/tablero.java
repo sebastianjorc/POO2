@@ -32,7 +32,7 @@ public class tablero extends JPanel{
 	
 
     public tablero(JLabel t2, Partida datos) {
-    	this.datos=datos;	tablero.lPts=t2;
+    	this.datos=datos;	lPts=t2;
     	setBackground(Color.decode("#FFFDE4"));
 		setLayout(new FlowLayout(FlowLayout.CENTER));
         shapes = new ArrayList<ShapeItem>();

@@ -11,5 +11,4 @@ public class main {
 		tf.setResizable(false);
 		tf.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	}
-
 }

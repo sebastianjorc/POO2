@@ -111,6 +111,7 @@ public abstract class frameBase extends JFrame{
 	void init_jp3(){
 		jp3.setBorder(BorderFactory.createEtchedBorder(EtchedBorder.LOWERED));
 		JTextArea t1 = new JTextArea(Descripcion());
+		t1.setBackground(Color.decode("#FFD8CB"));
 		t1.setEditable(false);	 jp3.add(t1);	
 	}
 

@@ -1,4 +1,4 @@
-package prueba;
+package vista;
 
 import java.awt.Color;
 import java.awt.Polygon;
@@ -9,8 +9,9 @@ import java.awt.geom.Rectangle2D;
 
 public class figura {
 	Shape shape;	Color color;
-	int xVel=8;		int yVel=8;
-	int x, y, xl, yl, tipo;
+	int xVel=10;		int yVel=8;
+	int x, y, xl, yl;
+	public int tipo;
 	
 	
 	figura(Shape shape, Color color, int tipo){
@@ -19,8 +20,8 @@ public class figura {
 		yl=(int)shape.getBounds2D().getHeight();
 		xl=(int)shape.getBounds2D().getWidth();
 
-		this.setXl(xl+30);
-		this.setYl(yl+30);
+		this.setXl(xl-30);
+		this.setYl(yl-30);
 		
 		this.tipo =tipo;
 		this.shape=shape;
@@ -35,11 +36,11 @@ public class figura {
 		else			{ 	x=x+xVel;	y=y+yVel;	}
 		
 		if(tipo==0  || tipo == 3){
-			if(x<0  || x>TFrame.MAX_X-xl)	xVel=-xVel;
-			if(y<0  || y>TFrame.MAX_Y-yl)	yVel=-yVel;
+			if(x<0  || x>tableroMov.sizex-xl/2)					xVel=-xVel;
+			if(y<0  || y>tableroMov.tamCuadrado*10-(yl/2-10))	yVel=-yVel;
 		}else{
-			if(x<0  || x>TFrame.MAX_X-75)	xVel=-xVel;
-			if(y<0  || y>TFrame.MAX_Y-130)	yVel=-yVel;
+			if(x<0  || x>tableroMov.sizex)						xVel=-xVel;
+			if(y<0  || y>tableroMov.tamCuadrado*10+10)			yVel=-yVel;
 		}
 		
 		this.setShape(nuevoShape(tipo));
@@ -47,8 +48,8 @@ public class figura {
 	
 	public Shape nuevoShape(int op){
 		if (op==0){						//		x=300  xl=110							
-	        int puntosX[] = {	x+(xl/2),	x+(3*xl/5),	x+xl,		x+(2*xl/3), 	x+(4*xl/5), 	x+(xl/2), 	x+(xl/5), 	x+(xl/3), 	x, 			x+(2*xl/5)	};
-	        int puntosY[] = {	y,			y+(2*yl/5),  y+(yl*3/7), 	y+(3*yl/5), 	y+yl, 		y+(yl*3/4), 	y+yl, 		y+(yl*3/5),  y+(yl*3/7),  y+(2*yl/5) 	};
+	        int puntosX[] = {	x+(xl/2),	x+(3*xl/5),	x+xl,		x+(2*xl/3),	x+(4*xl/5),	x+(xl/2), 	x+(xl/5), 	x+(xl/3), 	x, 			x+(2*xl/5)	};
+	        int puntosY[] = {	y,			y+(2*yl/5), y+(yl*3/7), y+(3*yl/5),	y+yl, 		y+(yl*3/4),	y+yl, 		y+(yl*3/5), y+(yl*3/7),  y+(2*yl/5) };
 	        GeneralPath estrella = new GeneralPath();  // crear objeto GeneralPath
 	        estrella.moveTo(puntosX[0],puntosY[0] );
 	        for ( int a = 1; a < puntosX.length; a++ )
@@ -61,8 +62,8 @@ public class figura {
 		else if (op==2) return new Ellipse2D.Double	 (x,y, xl,yl);
 		else if (op==3){
 			
-	        int valoresX[] = { x+(xl/2), 	x, 				x+(xl/5), 	x+(xl-(xl/5)), 	x+xl 		};
-	        int valoresY[] = { y, 			y+(6*yl/13), 	y+yl, 		y+yl, 			y+(6*yl/13)	};
+	        int valoresX[] = { x+(xl/2), 	x, 			x+(xl/5), 	x+(xl-(xl/5)), 	x+xl 		};
+	        int valoresY[] = { y, 			y+(6*yl/13), 	y+yl, 		y+yl, 		y+(6*yl/13)	};
 	        Polygon poligono1 = new Polygon( valoresX, valoresY, 5);
 	        poligono1.translate(xVel,yVel);
 	        return poligono1;	        

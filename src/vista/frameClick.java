@@ -11,7 +11,6 @@ import javax.swing.border.EtchedBorder;
 import controlador.ClickBoton;
 import modelo.Partida;
 
-
 public class frameClick extends frameBase{
 	
 	private static final long serialVersionUID = 1L;

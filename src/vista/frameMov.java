@@ -8,6 +8,7 @@ import javax.swing.BorderFactory;
 import javax.swing.JPanel;
 import javax.swing.border.EtchedBorder;
 
+import controlador.ClickBoton;
 import modelo.Partida;
 
 public class frameMov extends frameBase {
@@ -33,8 +34,8 @@ public class frameMov extends frameBase {
 		JPanel jpb = new JPanel();
 		BotonP b1 = new BotonP("START");
 		BotonP b2 = new BotonP("STOP");
-		//b1.addActionListener(new ClickBoton(b2,untablero));
-		//b2.addActionListener(new ClickBoton(b1,untablero));
+		b1.addActionListener(new ClickBoton(b2,untablero));
+		b2.addActionListener(new ClickBoton(b1,untablero));
 		
 		jpb.setBackground(Color.decode("#FFFDE4"));		
 		jpb.add(b1);	jpb.add(b2);
@@ -52,6 +53,5 @@ public class frameMov extends frameBase {
 				+"cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non\n"
 				+"proident, sunt in culpa qui officia deserunt mollit anim id est laborum.\n";
 	}
-
 
 }

@@ -3,26 +3,34 @@ package controlador;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+import javax.swing.Timer;
+
 import vista.BotonP;
 import vista.tablero;
+import vista.tableroMov;
 
 public class ClickBoton implements ActionListener {	
 	BotonP btn;
-	tablero tbl;
+	Timer t,Crono;
 	public ClickBoton(BotonP b, tablero untablero) {
-		btn=b;
-		tbl=untablero;
+		this.t=untablero.t;
+		this.Crono=untablero.Crono;
+		this.btn=b;
+	}
+	public ClickBoton(BotonP b2, tableroMov untablero) {
+		this.t=untablero.t;
+		this.Crono=untablero.Crono;
+		this.btn=b2;
 	}
 	public void actionPerformed(ActionEvent e) {
-		
 		BotonP btnPulsado=(BotonP) e.getSource();
 		
 		if (btnPulsado.getText()=="STOP"){
-			tbl.t.stop();
-			tbl.Crono.stop();
+			t.stop();
+			Crono.stop();
 		}else if (btnPulsado.getText()=="START"){
-			tbl.t.start();
-			tbl.Crono.start();	
+			t.start();
+			Crono.start();	
 		}
 		
 		btnPulsado.setPress(true);

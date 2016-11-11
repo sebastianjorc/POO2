@@ -13,8 +13,7 @@ public class TFrame extends JFrame{
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		panel p = new panel();
 		this.add(p);
-		this.setVisible(true);
-		
+		this.setVisible(true);		
 	}
-
+	
  }

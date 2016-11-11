@@ -21,7 +21,6 @@ public class figura {
 
 		this.setXl(xl-50);
 		this.setYl(yl-50);
-		System.out.println(x+"\t"+y+"\t"+xl+"\t"+yl);
 		this.tipo =tipo;
 		this.shape=shape;
 		this.color=color;

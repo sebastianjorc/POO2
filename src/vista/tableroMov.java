@@ -38,22 +38,21 @@ public class tableroMov extends JPanel {
     	setBackground(Color.decode("#FFFDE4"));
 		setLayout(new FlowLayout(FlowLayout.CENTER));
         figuras = new ArrayList<figura>();		
-        figuras = generarShapes();        
-        t		= new Timer(100, new mov(this));
-		Crono = new Timer (1000,tm);
-		add(l);
+        figuras = generarShapes();
         addMouseListener(new ClickTableroMov(figuras,this));
+        t		= new Timer(100, new mov(this));
+		Crono 	= new Timer(1000,tm);
+		add(l);
     }
 
     public void limpiar_tablero(){
+    	figuras.removeAll(figuras);
     	l.setText("00:00");
     	datos.pts=0;
     	lPts.setText("               PUNTAJE: "+ datos.pts);
-    	figuras.get(0).setBounds(300,30,50,50);
-    	figuras.get(1).setBounds(80 ,30,50,50);
-    	figuras.get(2).setBounds(5	,30,50,50);
-    	figuras.get(3).setBounds(210,120,50,50);
+        figuras = generarShapes();
         tm.s=0; tm.m=0;
+        addMouseListener(new ClickTableroMov(figuras,this));
         this.repaint();
     	
     }

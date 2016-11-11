@@ -20,17 +20,15 @@ public class mov implements ActionListener{
 		tm.repaint();
 		for (figura item: tm.figuras)
 			item.update();
-		if(revisar_colisiones()){ConexionSQL con = new ConexionSQL();
-		tm.t.stop();
-		tm.Crono.stop();
-		
-		JOptionPane.showMessageDialog(null,"Su puntaje ha sido:"+tm.datos.pts+"/60");
-		con.insertar(tm.datos.user, tm.datos.tipoPartida, tm.datos.pts);
-					
-		tm.datos.pts=0;
-		tableroMov.lPts.setText	("               PUNTAJE: "+ tm.datos.pts);
-		
-		tm.s=0; tm.m=0;	tm.l.setText("00:00");
+		if(revisar_colisiones()){
+			tm.t.stop();
+			tm.Crono.stop();
+			
+			JOptionPane.showMessageDialog(null,"Su puntaje ha sido:"+tm.datos.pts+"/60");
+			new ConexionSQL().insertar(tm.datos.user, tm.datos.tipoPartida, tm.datos.pts);
+			tm.limpiar_tablero();
+			
+			tm.s=0; tm.m=0;	tm.l.setText("00:00");
 		}
 	}
 

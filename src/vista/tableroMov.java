@@ -23,7 +23,7 @@ import modelo.Partida;
 public class tableroMov extends JPanel {	
 	private static final long serialVersionUID = 1L;
 	public static final Color DEFAULT_COLOR = Color.decode("#E8FFFA");
-	public static JLabel lPts;
+	public JLabel lPts;
     public ArrayList<figura> figuras;
 	public JLabel l = new JLabel("00:00");
 	public int s=0,	m=0;
@@ -31,6 +31,7 @@ public class tableroMov extends JPanel {
 	public Timer t,Crono;
 	public Partida datos;	
 	Polygon poligono1;	GeneralPath estrella;
+	Cronometro tm = new Cronometro (this);
 
     public tableroMov(JLabel t2, Partida datos) {
     	this.datos=datos;	lPts=t2;
@@ -38,12 +39,25 @@ public class tableroMov extends JPanel {
 		setLayout(new FlowLayout(FlowLayout.CENTER));
         figuras = new ArrayList<figura>();		
         figuras = generarShapes();        
-        t		= new Timer(100,new mov(this));		
-		Crono = new Timer (1000,new Cronometro(this));
-        addMouseListener(new ClickTableroMov(figuras,this));
+        t		= new Timer(100, new mov(this));
+		Crono = new Timer (1000,tm);
 		add(l);
+        addMouseListener(new ClickTableroMov(figuras,this));
     }
 
+    public void limpiar_tablero(){
+    	l.setText("00:00");
+    	datos.pts=0;
+    	lPts.setText("               PUNTAJE: "+ datos.pts);
+    	figuras.get(0).setBounds(300,30,50,50);
+    	figuras.get(1).setBounds(80 ,30,50,50);
+    	figuras.get(2).setBounds(5	,30,50,50);
+    	figuras.get(3).setBounds(210,120,50,50);
+        tm.s=0; tm.m=0;
+        this.repaint();
+    	
+    }
+    
     public ArrayList<figura> generarShapes(){
     	figuras = new ArrayList<figura>();
     	

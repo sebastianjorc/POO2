@@ -5,42 +5,32 @@ import java.awt.event.ActionListener;
 
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
-import javax.swing.Timer;
 
 import modelo.ConexionSQL;
-import modelo.Partida;
 import vista.tablero;
 import vista.tableroMov;
 
 public class Cronometro implements ActionListener{
-	int 	s, m,	tipo;	
-	JLabel 	l, lPts;	
-	Timer 	t, Crono;	
-	Partida datos;
+	public int 	s;
+	public int m;
+	JLabel 	l, lPts;
 
 	private tablero tc;
-	private tableroMov tm;
+	private tableroMov tm=null;
 
 	public Cronometro(tablero t) {
-		tipo=1;
 		this.tc=t;
-		this.t=t.t;
-		this.Crono=t.Crono;
-		datos=t.datos;
-		l=t.l;		s=t.s; lPts=tablero.lPts;
+		this.l=t.l;		this.s=t.s; this.lPts=tc.lPts;
 	}
 
 	public Cronometro(tableroMov t) {
 		this.tm=t;
-		this.t=t.t;
-		this.Crono=t.Crono;
-		datos=t.datos;
-		l=t.l;		s=t.s; lPts=tableroMov.lPts;
+		this.l=t.l;		this.s=t.s; this.lPts=tm.lPts;
 	}
 
 	public void actionPerformed(ActionEvent e) {
-		if (datos.tipoPartida=="BrainClickMov"){
-			datos.pts++; tableroMov.lPts.setText	("               PUNTAJE: "+ datos.pts);
+		if (tm!=null){
+			tm.datos.pts++; tm.lPts.setText	("               PUNTAJE: "+ tm.datos.pts);
 		}
 		if (s==60){	s=0;	m++;	}		else{s++;}
 		
@@ -50,19 +40,20 @@ public class Cronometro implements ActionListener{
 		else			 {	l.setText(m+":"+s);		}
 		l.repaint();
 		
-		if (m==1){
-			ConexionSQL con = new ConexionSQL();
-			t.stop();
-			if (tipo==1)tc.Crono.stop();
-			else tm.Crono.stop();
-			
-			JOptionPane.showMessageDialog(null,"Su puntaje ha sido:"+datos.pts+"/60");
-			con.insertar(datos.user, datos.tipoPartida, datos.pts);
-						
-			datos.pts=0;
-			tableroMov.lPts.setText	("               PUNTAJE: "+ datos.pts);
-			
-			s=0; m=0;	l.setText("00:00");
+		if (s==6){
+			if (tm!=null){
+				tm.t.stop();
+				tm.Crono.stop();
+				JOptionPane.showMessageDialog(null,"Su puntaje ha sido:"+tm.datos.pts+"/60");
+				new ConexionSQL().insertar(tm.datos.user, tm.datos.tipoPartida, tm.datos.pts);
+				tm.limpiar_tablero();
+			}else{ 
+				tc.t.stop();
+				tc.Crono.stop();
+				JOptionPane.showMessageDialog(null,"Su puntaje ha sido:"+tc.datos.pts+"/60");
+				new ConexionSQL().insertar(tc.datos.user, tc.datos.tipoPartida, tc.datos.pts);
+				tc.limpiar_tablero();
+			}
 		}
 	}
 

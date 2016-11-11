@@ -26,7 +26,7 @@ public class ClickTablero implements MouseListener{
             	}else{item.setColor(p.colorFalse);p.datos.pts--;}
             }
         }
-        tablero.lPts.setText("               PUNTAJE: "+ p.datos.pts);
+        p.lPts.setText("               PUNTAJE: "+ p.datos.pts);
         p.repaint();
 	}
 

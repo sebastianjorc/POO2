@@ -35,12 +35,12 @@ public class ClickItemBar implements ActionListener {
         break;
  
         case 4:
-        	con = new ConexionSQL();	table = con.consulta(fb.datos.user);
+        	con = new ConexionSQL();	table = con.consulta(fb.datos.user,fb.datos.tipoPartida);
     		JOptionPane.showMessageDialog(null,new JScrollPane(table));
         break;
  
         case 5:
-        	con = new ConexionSQL();	table = con.consulta(null);
+        	con = new ConexionSQL();	table = con.consulta(null,fb.datos.tipoPartida);
     		JOptionPane.showMessageDialog(null, new JScrollPane(table));
         break;
  

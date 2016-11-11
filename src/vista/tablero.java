@@ -20,7 +20,7 @@ import modelo.Partida;
 public class tablero extends JPanel{
 	private static final long serialVersionUID = 1L;
 	public static final Color DEFAULT_COLOR = Color.decode("#E8FFFA");
-	public static JLabel lPts;
+	public JLabel lPts;
     ArrayList<ShapeItem> shapes;
 	public JLabel l = new JLabel("00:00");
 	public int s=0,	m=0,	sizex = 421,	sizey = 351,	tamCuadrado = 35;
@@ -29,6 +29,7 @@ public class tablero extends JPanel{
 			colorFalse = Color.RED,
 			ColorActual= Color.YELLOW;
 	public Partida datos;
+	Cronometro mov = new Cronometro(this);
 	
 
     public tablero(JLabel t2, Partida datos) {
@@ -38,8 +39,18 @@ public class tablero extends JPanel{
 		inicializar_tablero();
         addMouseListener(new ClickTablero(shapes,this));
 		t = new Timer(1000, new pintarTab(this,shapes));
-		Crono = new Timer (1000,new Cronometro(this));
+		Crono = new Timer (1000,mov);
 		add(l);
+    }
+    public void limpiar_tablero(){
+    	l.setText("00:00");
+    	datos.pts=0;
+    	lPts.setText("               PUNTAJE: "+ datos.pts);
+		for (ShapeItem item : shapes){
+			item.color=DEFAULT_COLOR;
+		}
+        mov.s=0; mov.m=0;
+		this.repaint();
     }
 
 	public void inicializar_tablero() {

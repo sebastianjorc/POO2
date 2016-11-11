@@ -64,15 +64,15 @@ public class ConexionSQL {
 	}
 	
 
-	public JTable consulta(String user){
+	public JTable consulta(String user, String tipo){
 		JTable tabla = null;	Statement s = null;		ResultSet rs = null;
 
 		try {
 			connect();
 			s = con.createStatement();	
 			if (user==null)
-					rs = s.executeQuery ("select * from partida ORDER BY pts DESC");
-			else	rs = s.executeQuery ("select * from partida WHERE user = '"+user+"' ORDER BY pts DESC");
+					rs = s.executeQuery ("select * from partida WHERE tipo = '"+tipo+"' ORDER BY pts DESC");
+			else	rs = s.executeQuery ("select * from partida WHERE user = '"+user+"' AND tipo = '"+tipo+"' ORDER BY pts DESC");
 			DefaultTableModel modelo = new DefaultTableModel();
 			tabla = new JTable(modelo);	modelo.addColumn("Fecha");
 			modelo.addColumn("User");	modelo.addColumn("Puntos");

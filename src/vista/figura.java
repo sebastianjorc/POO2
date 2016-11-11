@@ -21,7 +21,7 @@ public class figura {
 
 		this.setXl(xl-50);
 		this.setYl(yl-50);
-		
+		System.out.println(x+"\t"+y+"\t"+xl+"\t"+yl);
 		this.tipo =tipo;
 		this.shape=shape;
 		this.color=color;
@@ -70,6 +70,13 @@ public class figura {
 		return null;
 	}
 
+	public void setBounds(int ix, int iy, int fx, int fy){
+		this.x=ix;
+		this.y=iy;
+		this.xl=fx;
+		this.yl=fy;
+		
+	}
 	public void	setShape(Shape shape){
 		this.shape = shape;
 	}

@@ -4,6 +4,9 @@ import javax.swing.JOptionPane;
 
 public class main {
 
+	/**Corre el programa inicializando el controlador.
+	 * Contiene el JOptionPane que da la bienvenida.
+	 */
 	@SuppressWarnings("unused")
 	public static void main(String[] args) {
 		JOptionPane.showMessageDialog( null, 

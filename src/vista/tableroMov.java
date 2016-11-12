@@ -20,6 +20,8 @@ import controlador.Cronometro;
 import controlador.mov;
 import modelo.Partida;
 
+/**Contiene el tablero del juego BrainClickMov y cada uno de sus componentes
+ */
 public class tableroMov extends JPanel {	
 	private static final long serialVersionUID = 1L;
 	public static final Color DEFAULT_COLOR = Color.decode("#E8FFFA");
@@ -33,6 +35,10 @@ public class tableroMov extends JPanel {
 	Polygon poligono1;	GeneralPath estrella;
 	Cronometro tm = new Cronometro (this);
 
+    /**Inicializa los datos del tablero y cada uno de sus componentes
+     * @param t2	: Se utiliza para actualizar el puntaje del usuario a medida que el juego avanza
+     * @param datos	: Datos de la partida que son integrados los atributos para poder manipularlos en el tablero.
+     */
     public tableroMov(JLabel t2, Partida datos) {
     	this.datos=datos;	lPts=t2;
     	setBackground(Color.decode("#FFFDE4"));
@@ -45,6 +51,8 @@ public class tableroMov extends JPanel {
 		add(l);
     }
 
+    /** Limpia el tablero y los datos de la partida para cuando acaba el juego o se detiene.
+     */
     public void limpiar_tablero(){
     	figuras.removeAll(figuras);
     	l.setText("00:00");
@@ -57,6 +65,9 @@ public class tableroMov extends JPanel {
     	
     }
     
+    /**Inicializa los valores de cada figura del tablero 
+     * @return devuelve un arreglo con todas las figuras
+     */
     public ArrayList<figura> generarShapes(){
     	figuras = new ArrayList<figura>();
     	
@@ -81,6 +92,9 @@ public class tableroMov extends JPanel {
 		return figuras; 
     }
 
+    /* (non-Javadoc)
+     * @see javax.swing.JComponent#paintComponent(java.awt.Graphics)
+     */
     public void paintComponent(Graphics g) {
     	
     	super.paintComponent(g);    	  

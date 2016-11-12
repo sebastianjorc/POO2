@@ -5,6 +5,7 @@ import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
 
 import javax.swing.BorderFactory;
+import javax.swing.JButton;
 import javax.swing.JPanel;
 import javax.swing.border.EtchedBorder;
 
@@ -15,6 +16,9 @@ public class frameMov extends frameBase {
 	
 	private static final long serialVersionUID = 1L;
 
+	/**Inicializa cada JPanel y el frame con los datos de la partida
+	 * @param unaPartida :integra los datos de la partida en los atributos para poder manejarlos en el tablero.
+	 */
 	frameMov(Partida unaPartida){
 		super(unaPartida);
 		init_jp1();
@@ -22,6 +26,9 @@ public class frameMov extends frameBase {
 		init_jp3();
 	}
 	
+	/* (non-Javadoc)
+	 * @see vista.frameBase#init_jp2()
+	 */
 	public void init_jp2(){
 		jp2.setBorder(BorderFactory.createEtchedBorder(EtchedBorder.LOWERED));
 		jp2.setLayout(new GridBagLayout());		
@@ -32,8 +39,8 @@ public class frameMov extends frameBase {
 		jp2.add(untablero,gbc);
 		
 		JPanel jpb = new JPanel();
-		BotonP b1 = new BotonP("START");
-		BotonP b2 = new BotonP("STOP");
+		JButton b1 = new JButton("START");
+		JButton b2 = new JButton("STOP");
 		b1.addActionListener(new ClickBoton(b2,untablero));
 		b2.addActionListener(new ClickBoton(b1,untablero));
 		
@@ -45,6 +52,9 @@ public class frameMov extends frameBase {
 		
 	}
 	
+	/* (non-Javadoc)
+	 * @see vista.frameBase#Descripcion()
+	 */
 	public String Descripcion(){
 		return	"Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod\n"
 				+ "tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,\n"

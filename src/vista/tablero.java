@@ -17,6 +17,8 @@ import controlador.Cronometro;
 import controlador.pintarTab;
 import modelo.Partida;
 
+/** Contiene el tablero del juego BrainClick y cada uno de sus componentes
+ */
 public class tablero extends JPanel{
 	private static final long serialVersionUID = 1L;
 	public static final Color DEFAULT_COLOR = Color.decode("#E8FFFA");
@@ -32,6 +34,10 @@ public class tablero extends JPanel{
 	Cronometro mov = new Cronometro(this);
 	
 
+    /**Inicializa los datos del tablero y cada uno de sus componentes
+     * @param t2	: Se utiliza para actualizar el puntaje del usuario a medida que el juego avanza
+     * @param datos	: Datos de la partida que son integrados los atributos para poder manipularlos en el tablero.
+     */
     public tablero(JLabel t2, Partida datos) {
     	this.datos=datos;	lPts=t2;
     	setBackground(Color.decode("#FFFDE4"));
@@ -42,6 +48,9 @@ public class tablero extends JPanel{
 		Crono = new Timer (1000,mov);
 		add(l);
     }
+
+    /** Limpia el tablero y los datos de la partida para cuando acaba el juego o se detiene.
+     */
     public void limpiar_tablero(){
     	l.setText("00:00");
     	datos.pts=0;
@@ -53,6 +62,8 @@ public class tablero extends JPanel{
 		this.repaint();
     }
 
+	/**Inicializa los valores de los ShapeItem del tablero 
+	 */
 	public void inicializar_tablero() {
         shapes = new ArrayList<ShapeItem>();
 		for (int i = 35; i<sizex+33; i+=tamCuadrado){
@@ -62,6 +73,9 @@ public class tablero extends JPanel{
 		}		
 	}
 
+	/**Pinta cada uno de los ShapeItem el color inicial.
+	 * @param shapes2
+	 */
 	public void pintar(ArrayList<ShapeItem> shapes2) {
 		for (ShapeItem item : shapes2){
 			if (item.color!=DEFAULT_COLOR){
@@ -70,6 +84,8 @@ public class tablero extends JPanel{
 		}
     }
 
+	/**Contiene los valores de cada ShapeItem, que es el tipo de objeto con el que itneractuamos en el juego.
+	 */
 	public class ShapeItem {
     	boolean estado, presionado;
         Shape shape;
@@ -116,6 +132,9 @@ public class tablero extends JPanel{
         }
     }
 
+    /* (non-Javadoc)
+     * @see javax.swing.JComponent#paintComponent(java.awt.Graphics)
+     */
     @Override
     public void paintComponent(Graphics g) {
         super.paintComponent(g);

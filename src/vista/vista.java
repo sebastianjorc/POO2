@@ -4,8 +4,13 @@ import javax.swing.JFrame;
 
 import modelo.Partida;
 
+/**Manipula qué tipo de frame/vista mostrará al usuario acorde a su elección del juego.
+ */
 public class vista {
 	frameBase fb;
+	/**Inicializa los valores de la partida y el frame del juego.
+	 * @param unaPartida
+	 */
 	public vista(Partida unaPartida) {		
 		if (unaPartida.tPartida != -1){
 			

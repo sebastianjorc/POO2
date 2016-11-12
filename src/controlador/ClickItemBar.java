@@ -10,13 +10,31 @@ import javax.swing.JTable;
 import modelo.ConexionSQL;
 import vista.frameBase;
 
+/**Clase que implementa actionPerformed de ActionListener
+ * Funciona sobre los item de la barra del frame
+ * Su función es que cada item pueda llevar a cabo su función particular
+ */
 public class ClickItemBar implements ActionListener {
-	int op ;	controlador nc;	frameBase fb;	utilidades u = new utilidades();	JTable table = null;	ConexionSQL con=null;
+	
+	int 		op;	//Objeto de clase int, recibe el objeto de clase int entregado al constructor.
+	controlador nc;	//
+	frameBase 	fb; //
+	JTable 		table 	= null;	
+	ConexionSQL con		= null;
+	utilidades 	u 		= new utilidades();	
 
+	/**Recibe un objeto int y otro frameBase que son guardados en los atributos de la clase y le hacen funcionar
+	 * @param i			:Sirve para reconocer qué item dentro del bar fue seleccionado
+	 * @param frameBase	:Sirve como objeto que entrega los datos y en la que actua la esta clase.
+	 */
 	public ClickItemBar(int i, frameBase frameBase) {
 		this.op=i;
 		fb=frameBase;
 	}
+	
+	/* (non-Javadoc)
+	 * @see java.awt.event.ActionListener#actionPerformed(java.awt.event.ActionEvent)
+	 */
 	public void actionPerformed(ActionEvent arg0) {
 		switch (op) {
 		 

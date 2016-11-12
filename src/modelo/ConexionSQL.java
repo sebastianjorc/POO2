@@ -6,9 +6,13 @@ import java.util.Calendar;
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
 
+/**Clase encargada de realizar la conexión con el servidor.
+ */
 public class ConexionSQL {
 	private Connection con;
 
+	/**Realiza conexión con el servidor.
+	 */
 	public void connect(){
 		 try
 		    {
@@ -25,6 +29,11 @@ public class ConexionSQL {
 		    }
 	}
 	
+	/** Inserta datos al servidor
+	 * @param user : usuario a ingresar a la tabla.
+	 * @param tipo : tipo de partida a ingresar a la tabla.
+	 * @param pts  : pts a ingresar a la tabla.
+	 */
 	public void insertar(String user, String tipo, int pts){
 		connect();
 	      // create a sql date object so we can use it in our INSERT statement
@@ -40,11 +49,11 @@ public class ConexionSQL {
 		try {
 			preparedStmt = con.prepareStatement(query);
 			preparedStmt.setString (1, user);
-	      preparedStmt.setString (2, tipo);
-	      preparedStmt.setDate   (3, startDate);
-	      preparedStmt.setInt    (4, pts);
-	      preparedStmt.execute();
-		con.close();
+		    preparedStmt.setString (2, tipo);
+		    preparedStmt.setDate   (3, startDate);
+		    preparedStmt.setInt    (4, pts);
+		    preparedStmt.execute();
+		    con.close();
 		} catch (SQLException e) {
 			System.out.println("Error al incertar");
 			System.out.println("Error: "+e);
@@ -52,6 +61,8 @@ public class ConexionSQL {
 		}
 	}
 
+	/** Cierra la conexión con el servidor 
+	 */
 	public void close(){
 	    if(con != null){
 	        try {
@@ -64,6 +75,11 @@ public class ConexionSQL {
 	}
 	
 
+	/** Realiza las consultas al servidor, estás pueden ser por usuario y tipo ó solo tipo.
+	 * @param user : id del usuario a consultar
+	 * @param tipo : id del tipo a consultar
+	 * @return devuelve un JTable con los datos recividos de la consulta.
+	 */
 	public JTable consulta(String user, String tipo){
 		JTable tabla = null;	Statement s = null;		ResultSet rs = null;
 
@@ -87,17 +103,3 @@ public class ConexionSQL {
 		return tabla;
 	}
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-

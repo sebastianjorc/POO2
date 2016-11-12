@@ -20,6 +20,9 @@ import javax.swing.border.EtchedBorder;
 import controlador.ClickItemBar;
 import modelo.Partida;
 
+/** Clase base para los frames de cada juego.
+ * Contiene todos los componentes necesarios para el frame, a excepción del tablero que deberá ser implementado en su clase hija
+ */
 public abstract class frameBase extends JFrame{
 	
 	private static final long serialVersionUID = 1L;
@@ -45,6 +48,9 @@ public abstract class frameBase extends JFrame{
     GridBagConstraints gbc	= new GridBagConstraints();
     public JLabel t1,t2;	public Partida datos;
     
+	/**Inicializa y asigna valores a los los atributos generales del frame como tamaño, bar, layout, etc
+	 * @param unaPartida agrega los valores de la partida generada en los atributos para utilizarlo en el frame
+	 */
 	frameBase(Partida unaPartida){
 		this.datos=unaPartida;
 		this.setIconImage(Icono);
@@ -67,6 +73,8 @@ public abstract class frameBase extends JFrame{
 		init();
 	}
 	
+	/**Inicializa barra y sus items.
+	 */
 	private void InicializarBar(){
 		item1.addActionListener(new ClickItemBar(1,this));
 		item2.addActionListener(new ClickItemBar(2,this));
@@ -84,6 +92,14 @@ public abstract class frameBase extends JFrame{
 		jmAyuda.add(item6);	jmAyuda.add(item7);	miBar.add(jmAyuda);		
 	}
 
+	/** Asigna valores al grid.
+	 * @param weightx 		Porcentaje de expanción en x
+	 * @param weighty 		Porcentaje de expanción en y
+	 * @param gridx			posición x donde se ubicará en el layout
+	 * @param gridy			posición y donde se ubicará en el layout
+	 * @param gridWidth		numero de celdas que tomará en x
+	 * @param gridHeight	numero de celdas que tomará en y
+	 */
 	void valorGrid(double weightx, double weighty, int gridx, int gridy, int gridWidth, int gridHeight){
         gbc.weightx 	= weightx;
 		gbc.weighty 	= weighty;
@@ -93,6 +109,8 @@ public abstract class frameBase extends JFrame{
 		gbc.gridheight	= gridHeight;
 	}
 
+	/**Inicializa los colores de cada JPanel
+	 */
 	void init(){
 		jp1.setBackground(Color.decode("#B2AEFF"));
 		jp2.setBackground(Color.decode("#FFFDE4"));
@@ -100,6 +118,8 @@ public abstract class frameBase extends JFrame{
 				 
 	 }
 
+	/**Inicializa el primer JPanel y sus componentes
+	 */
 	void init_jp1(){
 		jp1.setBorder(BorderFactory.createEtchedBorder(EtchedBorder.LOWERED));
 		jp1.setLayout(new GridLayout());
@@ -108,6 +128,8 @@ public abstract class frameBase extends JFrame{
 		jp1.add(t1);	jp1.add(t2);
 	}
 	
+	/**Inicializa el tercer JPanel y sus componentes
+	 */
 	void init_jp3(){
 		jp3.setBorder(BorderFactory.createEtchedBorder(EtchedBorder.LOWERED));
 		JTextArea t1 = new JTextArea(Descripcion());
@@ -115,6 +137,11 @@ public abstract class frameBase extends JFrame{
 		t1.setEditable(false);	 jp3.add(t1);	
 	}
 
+	/**Inicializa el segundo JPanel y sus componentes. Aquí va el tablero de juego.
+	 */
 	public abstract void init_jp2();
+	/**Contiene la descricpión del juego
+	 * @return devuelve un string con la descricpción del juego.
+	 */
 	public abstract String Descripcion();
 }

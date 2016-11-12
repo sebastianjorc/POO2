@@ -10,24 +10,38 @@ import modelo.ConexionSQL;
 import vista.tablero;
 import vista.tableroMov;
 
+/**Implementa el método actionPerformed.
+ * Se encarga de cronometrar y limitar el tiempo de partida.
+ */
 public class Cronometro implements ActionListener{
 	public int 	s;
-	public int m;
-	JLabel 	l, lPts;
+	public int 	m;
+	JLabel 		l;
 
 	private tablero tc;
 	private tableroMov tm=null;
 
+	/**Recibe el objeto t que será en quién actue y contendrá los principales atributos para el uso de esta clase. 
+	 * @param t :Contiene los atributos que serán necesarios y será en quién actua esta clase.
+	 */
 	public Cronometro(tablero t) {
 		this.tc=t;
-		this.l=t.l;		this.s=t.s; this.lPts=tc.lPts;
+		this.l=t.l;		
+		this.s=t.s;
 	}
 
+	/**Recibe el objeto t que será en quién actue y contendrá los principales atributos para el uso de esta clase.
+	 * @param t :Contiene los atributos que serán necesarios y será en quién actua esta clase.
+	 */
 	public Cronometro(tableroMov t) {
 		this.tm=t;
-		this.l=t.l;		this.s=t.s; this.lPts=tm.lPts;
+		this.l=t.l;		
+		this.s=t.s;
 	}
 
+	/* (non-Javadoc)
+	 * @see java.awt.event.ActionListener#actionPerformed(java.awt.event.ActionEvent)
+	 */
 	public void actionPerformed(ActionEvent e) {
 		if (tm!=null){
 			tm.datos.pts++; tm.lPts.setText	("               PUNTAJE: "+ tm.datos.pts);
@@ -40,7 +54,7 @@ public class Cronometro implements ActionListener{
 		else			 {	l.setText(m+":"+s);		}
 		l.repaint();
 		
-		if (s==6){
+		if (m==1){
 			if (tm!=null){
 				tm.t.stop();
 				tm.Crono.stop();

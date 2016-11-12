@@ -7,12 +7,21 @@ import java.awt.geom.Ellipse2D;
 import java.awt.geom.GeneralPath;
 import java.awt.geom.Rectangle2D;
 
+/** Serán las figuras geometricas utilizado para el juego de BrainClickMov.
+ * Estas contienen un shape con sus puntos dentro del tablero, color, velocidad de movimiento, 
+ * su tipo, x de inicio x, y de inicio en y, xl de su largo desde x en x y xy de su largo desde y en y
+ */
 public class figura {
 	Shape shape;	Color color;
 	public int xVel=5, yVel=5;
 	int x, y, xl, yl;	public int tipo;
 	
 	
+	/** Recibe los valores con los que será creada la figura y servirán para asignar valores a los atributos. 
+	 * @param shape : Valores 2D de la figura
+	 * @param color : color de la figura
+	 * @param tipo  : tipo de la figura (0 para estrella, 1 para cuadrado, 2 para circulo y 3 para pentagono)
+	 */
 	public figura(Shape shape, Color color, int tipo){
 		x =(int)shape.getBounds2D().getX();
 		y =(int)shape.getBounds2D().getY();
@@ -26,6 +35,8 @@ public class figura {
 		this.color=color;
 	}
 
+	/**Actualizará la posición (valores en el container) de la figura
+	 */
 	public void update(){
 	
 			 if(tipo==3){ 	x=0;		y=y+yVel;	}
@@ -44,6 +55,10 @@ public class figura {
 		this.setShape(nuevoShape(tipo));
 	}
 	
+	/**Devuelve un shape con los valores actuales
+	 * @param op servirá para identificar que tipo de shape se deberá crear y devolver
+	 * @return devuelve uns shape (valores en el container) que sustituirá al shape actual de la figura.
+	 */
 	public Shape nuevoShape(int op){
 		if (op==0){						//		x=300  xl=110							
 	        int puntosX[] = {	x+(xl/2),	x+(3*xl/5),	x+xl,		x+(2*xl/3),	x+(4*xl/5),	x+(xl/2), 	x+(xl/5), 	x+(xl/3), 	x, 			x+(2*xl/5)	};
@@ -69,6 +84,12 @@ public class figura {
 		return null;
 	}
 
+	/**Reestablece los valores de la figura
+	 * @param ix valor en x donde inicia la figura
+	 * @param iy valor en y donde inicia la figura
+	 * @param fx valor en x donde sumado a x será donde acabará la figura
+	 * @param fy valor en y donde sumado a y será donde acabará la figura
+	 */
 	public void setBounds(int ix, int iy, int fx, int fy){
 		this.x=ix;
 		this.y=iy;

@@ -15,6 +15,7 @@ public class mov implements ActionListener{
 	tableroMov tm; int tipo;
 
 	/**Recibe el objeto tableroMov que será quién contiene y en quién actuará la clase actionPerformed
+	 * @param tableroMov Integra el tablero a los atributos para tomar sus datos y actuar en él
 	 */
 	public mov(tableroMov tableroMov) {
 		this.tm=tableroMov;

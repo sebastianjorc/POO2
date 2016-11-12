@@ -6,6 +6,7 @@ public class main {
 
 	/**Corre el programa inicializando el controlador.
 	 * Contiene el JOptionPane que da la bienvenida.
+	 * @param args ....
 	 */
 	@SuppressWarnings("unused")
 	public static void main(String[] args) {

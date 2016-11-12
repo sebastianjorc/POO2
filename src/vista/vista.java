@@ -9,7 +9,7 @@ import modelo.Partida;
 public class vista {
 	frameBase fb;
 	/**Inicializa los valores de la partida y el frame del juego.
-	 * @param unaPartida
+	 * @param unaPartida Integra los datos de la partida al juego
 	 */
 	public vista(Partida unaPartida) {		
 		if (unaPartida.tPartida != -1){

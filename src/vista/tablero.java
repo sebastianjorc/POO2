@@ -74,7 +74,7 @@ public class tablero extends JPanel{
 	}
 
 	/**Pinta cada uno de los ShapeItem el color inicial.
-	 * @param shapes2
+	 * @param shapes2 Shape a pintar.
 	 */
 	public void pintar(ArrayList<ShapeItem> shapes2) {
 		for (ShapeItem item : shapes2){

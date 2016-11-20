@@ -16,5 +16,4 @@ public class main {
 		Controlador c = new Controlador();
 		
 	}
-
 }

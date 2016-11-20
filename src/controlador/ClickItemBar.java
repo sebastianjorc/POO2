@@ -17,7 +17,7 @@ import vista.frameBase;
 public class ClickItemBar implements ActionListener {
 	
 	int 		op;	//Objeto de clase int, recibe el objeto de clase int entregado al constructor.
-	controlador nc;	//
+	Controlador nc;	//
 	frameBase 	fb; //
 	JTable 		table 	= null;	
 	ConexionSQL con		= null;
@@ -39,7 +39,7 @@ public class ClickItemBar implements ActionListener {
 		switch (op) {
 		 
         case 1:
-        	nc = new controlador();
+        	nc = new Controlador();
         	fb.dispose();
         break;
  

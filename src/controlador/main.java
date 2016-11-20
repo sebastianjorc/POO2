@@ -13,7 +13,8 @@ public class main {
 		JOptionPane.showMessageDialog( null, 
 		"¡Bienvenido! Este es un programa de entrenamiento cerebral.\n"
 		+ "Acontinuacion encontrara varios programas para ejercitar su cerebro.");
-		controlador c = new controlador();
+		Controlador c = new Controlador();
+		
 	}
 
 }

@@ -31,7 +31,7 @@ public class frameClick extends frameBase{
 	 */
 	public void init_jp2(){
 		jp2.setBorder(BorderFactory.createEtchedBorder(EtchedBorder.LOWERED));
-		jp2.setLayout(new GridBagLayout());		
+		jp2.setLayout(new GridBagLayout());
 		tablero untablero = new tablero(t2, datos);
 		
 		gbc.fill=GridBagConstraints.BOTH;        

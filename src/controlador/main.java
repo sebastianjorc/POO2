@@ -1,5 +1,4 @@
 package controlador;
-
 import javax.swing.JOptionPane;
 
 public class main {

@@ -4,5 +4,6 @@
 	<classpathentry exported="true" kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
 	<classpathentry exported="true" kind="lib" path="lib/mysql-connector-java-5.1.40-bin.jar"/>
 	<classpathentry exported="true" kind="lib" path="lib/plantuml.jar"/>
+	<classpathentry kind="lib" path="README.md"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

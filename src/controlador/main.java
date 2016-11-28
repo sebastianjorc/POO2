@@ -11,7 +11,7 @@ public class main {
 	public static void main(String[] args) {
 		JOptionPane.showMessageDialog( null, 
 		"¡Bienvenido! Este es un programa de entrenamiento cerebral.\n"
-		+ "Acontinuacion encontrara varios programas para ejercitar su cerebro.");
+		+ "Acontinuacion podrá escoger entre dos programas para ejercitar su cerebro.");
 		Controlador c = new Controlador();
 		
 	}

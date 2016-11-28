@@ -14,7 +14,7 @@ rectangle checkout {
   (checkout) -- clerk	
   }
 @enduml	
-*/
+
 
 public class DiagramaClasesDeUso {
 
@@ -22,4 +22,4 @@ public class DiagramaClasesDeUso {
 		JOptionPane.showMessageDialog(null,"Generando Diagrama");
 	}
 
-}
+}*/

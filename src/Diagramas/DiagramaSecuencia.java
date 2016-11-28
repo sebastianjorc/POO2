@@ -139,7 +139,7 @@ import javax.swing.JOptionPane;
    
   
  @enduml
- */
+ 
 
 public class DiagramaSecuencia {
 
@@ -147,4 +147,4 @@ public class DiagramaSecuencia {
 		JOptionPane.showMessageDialog(null,"Generando Diagrama");
 	}
 
-}
+}*/

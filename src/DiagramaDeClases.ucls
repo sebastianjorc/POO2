@@ -3,7 +3,7 @@
   associations="true" dependencies="false" nesting-relationships="true" router="FAN">  
   <class id="1" language="java" name="vista.frameMov" project="POO2" file="/POO2/src/vista/frameMov.java" binary="false" 
     corner="BOTTOM_RIGHT">    
-    <position height="135" width="131" x="1247" y="819"/>    
+    <position height="135" width="131" x="1949" y="1113"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -12,79 +12,79 @@
   </class>  
   <class id="2" language="java" name="controlador.Cronometro" project="POO2" 
     file="/POO2/src/controlador/Cronometro.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="171" width="194" x="645" y="819"/>    
+    <position height="171" width="194" x="1346" y="1113"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="3" language="java" name="vista.vista" project="POO2" file="/POO2/src/vista/vista.java" binary="false" 
-    corner="BOTTOM_RIGHT">    
-    <position height="81" width="90" x="1511" y="1"/>    
-    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
-      sort-features="false" accessors="true" visibility="true">      
-      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
-      <operations public="true" package="true" protected="true" private="true" static="true"/>    
-    </display>  
-  </class>  
-  <class id="4" language="java" name="controlador.ClickTableroMov" project="POO2" 
+  <class id="3" language="java" name="controlador.ClickTableroMov" project="POO2" 
     file="/POO2/src/controlador/ClickTableroMov.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="171" width="252" x="216" y="1"/>    
+    <position height="171" width="252" x="917" y="295"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="5" language="java" name="vista.tableroMov" project="POO2" file="/POO2/src/vista/tableroMov.java" 
+  <class id="4" language="java" name="vista.tableroMov" project="POO2" file="/POO2/src/vista/tableroMov.java" 
     binary="false" corner="BOTTOM_RIGHT">    
-    <position height="369" width="197" x="527" y="212"/>    
+    <position height="369" width="197" x="1228" y="506"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="6" language="java" name="controlador.ClickBoton" project="POO2" 
+  <class id="5" language="java" name="controlador.ClickBoton" project="POO2" 
     file="/POO2/src/controlador/ClickBoton.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="171" width="194" x="742" y="1"/>    
+    <position height="171" width="194" x="1443" y="295"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="7" language="java" name="controlador.ClickTablero" project="POO2" 
+  <class id="6" language="java" name="controlador.ClickTablero" project="POO2" 
     file="/POO2/src/controlador/ClickTablero.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="171" width="234" x="1237" y="1"/>    
+    <position height="171" width="234" x="1938" y="295"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="8" language="java" name="controlador.utilidades" project="POO2" 
+  <class id="7" language="java" name="controlador.utilidades" project="POO2" 
     file="/POO2/src/controlador/utilidades.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="135" width="160" x="1675" y="819"/>    
+    <position height="135" width="160" x="2378" y="1113"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="9" language="java" name="vista.frameBase" project="POO2" file="/POO2/src/vista/frameBase.java" 
+  <class id="8" language="java" name="vista.frameBase" project="POO2" file="/POO2/src/vista/frameBase.java" 
     binary="false" corner="BOTTOM_RIGHT">    
-    <position height="567" width="224" x="1247" y="212"/>    
+    <position height="567" width="224" x="1949" y="506"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="10" language="java" name="vista.tablero.ShapeItem" project="POO2" file="/POO2/src/vista/tablero.java" 
+  <class id="9" language="java" name="vista.tablero.ShapeItem" project="POO2" file="/POO2/src/vista/tablero.java" 
     binary="false" corner="BOTTOM_RIGHT">    
-    <position height="297" width="164" x="893" y="819"/>    
+    <position height="297" width="164" x="1595" y="1113"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="10" language="java" name="vista.Vista" project="POO2" file="/POO2/src/vista/Vista.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="81" width="92" x="2212" y="295"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -93,7 +93,7 @@
   </class>  
   <class id="11" language="java" name="vista.tablero" project="POO2" file="/POO2/src/vista/tablero.java" binary="false" 
     corner="BOTTOM_RIGHT">    
-    <position height="405" width="191" x="764" y="212"/>    
+    <position height="405" width="191" x="1465" y="506"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -102,7 +102,7 @@
   </class>  
   <class id="12" language="java" name="modelo.ConexionSQL" project="POO2" file="/POO2/src/modelo/ConexionSQL.java" 
     binary="false" corner="BOTTOM_RIGHT">    
-    <position height="171" width="167" x="1641" y="212"/>    
+    <position height="171" width="167" x="2344" y="506"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -111,43 +111,43 @@
   </class>  
   <class id="13" language="java" name="vista.figura" project="POO2" file="/POO2/src/vista/figura.java" binary="false" 
     corner="BOTTOM_RIGHT">    
-    <position height="585" width="162" x="216" y="819"/>    
+    <position height="585" width="162" x="917" y="1113"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="14" language="java" name="controlador.controlador" project="POO2" 
-    file="/POO2/src/controlador/controlador.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="81" width="90" x="1511" y="212"/>    
-    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
-      sort-features="false" accessors="true" visibility="true">      
-      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
-      <operations public="true" package="true" protected="true" private="true" static="true"/>    
-    </display>  
-  </class>  
-  <class id="15" language="java" name="modelo.Partida" project="POO2" file="/POO2/src/modelo/Partida.java" 
+  <class id="14" language="java" name="modelo.Partida" project="POO2" file="/POO2/src/modelo/Partida.java" 
     binary="false" corner="BOTTOM_RIGHT">    
-    <position height="171" width="110" x="1097" y="819"/>    
+    <position height="171" width="110" x="1799" y="1113"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="16" language="java" name="vista.frameClick" project="POO2" file="/POO2/src/vista/frameClick.java" 
+  <class id="15" language="java" name="vista.frameClick" project="POO2" file="/POO2/src/vista/frameClick.java" 
     binary="false" corner="BOTTOM_RIGHT">    
-    <position height="135" width="131" x="1418" y="819"/>    
+    <position height="135" width="131" x="2120" y="1113"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="17" language="java" name="controlador.mov" project="POO2" file="/POO2/src/controlador/mov.java" 
+  <class id="16" language="java" name="controlador.mov" project="POO2" file="/POO2/src/controlador/mov.java" 
     binary="false" corner="BOTTOM_RIGHT">    
-    <position height="135" width="194" x="508" y="1"/>    
+    <position height="135" width="194" x="1209" y="295"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="17" language="java" name="controlador.Controlador" project="POO2" 
+    file="/POO2/src/controlador/Controlador.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="81" width="91" x="2213" y="506"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -156,7 +156,7 @@
   </class>  
   <class id="18" language="java" name="controlador.main" project="POO2" file="/POO2/src/controlador/main.java" 
     binary="false" corner="BOTTOM_RIGHT">    
-    <position height="99" width="113" x="63" y="1"/>    
+    <position height="99" width="113" x="764" y="295"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -165,7 +165,7 @@
   </class>  
   <class id="19" language="java" name="controlador.pintarTab" project="POO2" file="/POO2/src/controlador/pintarTab.java" 
     binary="false" corner="BOTTOM_RIGHT">    
-    <position height="99" width="221" x="976" y="1"/>    
+    <position height="99" width="221" x="1677" y="295"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -174,7 +174,7 @@
   </class>  
   <class id="20" language="java" name="controlador.ClickItemBar" project="POO2" 
     file="/POO2/src/controlador/ClickItemBar.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="135" width="194" x="1641" y="1"/>    
+    <position height="135" width="194" x="2344" y="295"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -182,219 +182,220 @@
     </display>  
   </class>  
   <association id="21">    
-    <end type="SOURCE" refId="11" navigable="false">      
-      <attribute id="22" name="shapes"/>      
-      <multiplicity id="23" minimum="0" maximum="2147483647"/>    
+    <end type="SOURCE" refId="4" navigable="false">      
+      <attribute id="22" name="datos"/>      
+      <multiplicity id="23" minimum="0" maximum="1"/>    
     </end>    
-    <end type="TARGET" refId="10" navigable="true"/>    
+    <end type="TARGET" refId="14" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
   <association id="24">    
-    <end type="SOURCE" refId="6" navigable="false">      
-      <attribute id="25" name="tc"/>      
+    <end type="SOURCE" refId="4" navigable="false">      
+      <attribute id="25" name="tm"/>      
       <multiplicity id="26" minimum="0" maximum="1"/>    
     </end>    
-    <end type="TARGET" refId="11" navigable="true"/>    
+    <end type="TARGET" refId="2" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
   <association id="27">    
-    <end type="SOURCE" refId="5" navigable="false">      
-      <attribute id="28" name="figuras"/>      
-      <multiplicity id="29" minimum="0" maximum="2147483647"/>    
+    <end type="SOURCE" refId="20" navigable="false">      
+      <attribute id="28" name="nc"/>      
+      <multiplicity id="29" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="17" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <generalization id="30">    
+    <end type="SOURCE" refId="15"/>    
+    <end type="TARGET" refId="8"/>  
+  </generalization>  
+  <association id="31">    
+    <end type="SOURCE" refId="8" navigable="false">      
+      <attribute id="32" name="datos"/>      
+      <multiplicity id="33" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="14" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="34">    
+    <end type="SOURCE" refId="4" navigable="false">      
+      <attribute id="35" name="figuras"/>      
+      <multiplicity id="36" minimum="0" maximum="2147483647"/>    
     </end>    
     <end type="TARGET" refId="13" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
-  <association id="30">    
-    <end type="SOURCE" refId="7" navigable="false">      
-      <attribute id="31" name="p"/>      
-      <multiplicity id="32" minimum="0" maximum="1"/>    
+  <association id="37">    
+    <end type="SOURCE" refId="19" navigable="false">      
+      <attribute id="38" name="t"/>      
+      <multiplicity id="39" minimum="0" maximum="1"/>    
     </end>    
     <end type="TARGET" refId="11" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
-  <association id="33">    
-    <bendpoint x="225" y="212"/>    
-    <end type="SOURCE" refId="4" navigable="false">      
-      <attribute id="34" name="figuras"/>      
-      <multiplicity id="35" minimum="0" maximum="2147483647"/>    
+  <association id="40">    
+    <bendpoint x="926" y="506"/>    
+    <end type="SOURCE" refId="3" navigable="false">      
+      <attribute id="41" name="figuras"/>      
+      <multiplicity id="42" minimum="0" maximum="2147483647"/>    
     </end>    
     <end type="TARGET" refId="13" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
-  <association id="36">    
-    <end type="SOURCE" refId="2" navigable="false">      
-      <attribute id="37" name="tm"/>      
-      <multiplicity id="38" minimum="0" maximum="1"/>    
-    </end>    
-    <end type="TARGET" refId="5" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <association id="39">    
-    <end type="SOURCE" refId="6" navigable="false">      
-      <attribute id="40" name="tm"/>      
-      <multiplicity id="41" minimum="0" maximum="1"/>    
-    </end>    
-    <end type="TARGET" refId="5" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <nesting id="42">    
-    <end type="SOURCE" refId="11"/>    
-    <end type="TARGET" refId="10"/>  
-  </nesting>  
   <association id="43">    
-    <bendpoint x="1838" y="212"/>    
-    <end type="SOURCE" refId="20" navigable="false">      
+    <end type="SOURCE" refId="17" navigable="false">      
       <attribute id="44" name="u"/>      
       <multiplicity id="45" minimum="0" maximum="1"/>    
     </end>    
-    <end type="TARGET" refId="8" navigable="true"/>    
+    <end type="TARGET" refId="7" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
   <association id="46">    
-    <end type="SOURCE" refId="19" navigable="false">      
-      <attribute id="47" name="t"/>      
+    <end type="SOURCE" refId="6" navigable="false">      
+      <attribute id="47" name="p"/>      
       <multiplicity id="48" minimum="0" maximum="1"/>    
     </end>    
     <end type="TARGET" refId="11" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
-  <generalization id="49">    
-    <end type="SOURCE" refId="1"/>    
-    <end type="TARGET" refId="9"/>  
-  </generalization>  
-  <association id="50">    
-    <end type="SOURCE" refId="17" navigable="false">      
-      <attribute id="51" name="tm"/>      
-      <multiplicity id="52" minimum="0" maximum="1"/>    
-    </end>    
-    <end type="TARGET" refId="5" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <association id="53">    
-    <end type="SOURCE" refId="20" navigable="false">      
-      <attribute id="54" name="nc"/>      
-      <multiplicity id="55" minimum="0" maximum="1"/>    
-    </end>    
-    <end type="TARGET" refId="14" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <association id="56">    
-    <end type="SOURCE" refId="11" navigable="false">      
-      <attribute id="57" name="mov"/>      
-      <multiplicity id="58" minimum="0" maximum="1"/>    
-    </end>    
-    <end type="TARGET" refId="2" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <association id="59">    
-    <end type="SOURCE" refId="11" navigable="false">      
-      <attribute id="60" name="datos"/>      
-      <multiplicity id="61" minimum="0" maximum="1"/>    
-    </end>    
-    <end type="TARGET" refId="15" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <association id="62">    
-    <end type="SOURCE" refId="14" navigable="false">      
-      <attribute id="63" name="u"/>      
-      <multiplicity id="64" minimum="0" maximum="1"/>    
+  <association id="49">    
+    <end type="SOURCE" refId="10" navigable="false">      
+      <attribute id="50" name="fb"/>      
+      <multiplicity id="51" minimum="0" maximum="1"/>    
     </end>    
     <end type="TARGET" refId="8" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
-  <association id="65">    
+  <association id="52">    
     <end type="SOURCE" refId="2" navigable="false">      
-      <attribute id="66" name="tc"/>      
-      <multiplicity id="67" minimum="0" maximum="1"/>    
+      <attribute id="53" name="tm"/>      
+      <multiplicity id="54" minimum="0" maximum="1"/>    
     </end>    
-    <end type="TARGET" refId="11" navigable="true"/>    
+    <end type="TARGET" refId="4" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
-  <association id="68">    
-    <bendpoint x="985" y="212"/>    
-    <end type="SOURCE" refId="19" navigable="false">      
-      <attribute id="69" name="shapes"/>      
-      <multiplicity id="70" minimum="0" maximum="2147483647"/>    
+  <association id="55">    
+    <end type="SOURCE" refId="11" navigable="false">      
+      <attribute id="56" name="datos"/>      
+      <multiplicity id="57" minimum="0" maximum="1"/>    
     </end>    
-    <end type="TARGET" refId="10" navigable="true"/>    
+    <end type="TARGET" refId="14" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
-  <association id="71">    
+  <association id="58">    
+    <end type="SOURCE" refId="20" navigable="false">      
+      <attribute id="59" name="fb"/>      
+      <multiplicity id="60" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="8" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="61">    
+    <bendpoint x="2541" y="506"/>    
+    <end type="SOURCE" refId="20" navigable="false">      
+      <attribute id="62" name="u"/>      
+      <multiplicity id="63" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="7" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="64">    
+    <end type="SOURCE" refId="17" navigable="false">      
+      <attribute id="65" name="unaPartida"/>      
+      <multiplicity id="66" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="14" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="67">    
     <end type="SOURCE" refId="3" navigable="false">      
-      <attribute id="72" name="fb"/>      
-      <multiplicity id="73" minimum="0" maximum="1"/>    
+      <attribute id="68" name="p"/>      
+      <multiplicity id="69" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="4" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="70">    
+    <end type="SOURCE" refId="16" navigable="false">      
+      <attribute id="71" name="tm"/>      
+      <multiplicity id="72" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="4" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="73">    
+    <end type="SOURCE" refId="11" navigable="false">      
+      <attribute id="74" name="shapes"/>      
+      <multiplicity id="75" minimum="0" maximum="2147483647"/>    
     </end>    
     <end type="TARGET" refId="9" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
-  <association id="74">    
-    <end type="SOURCE" refId="14" navigable="false">      
-      <attribute id="75" name="unaPartida"/>      
-      <multiplicity id="76" minimum="0" maximum="1"/>    
-    </end>    
-    <end type="TARGET" refId="15" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <association id="77">    
-    <end type="SOURCE" refId="20" navigable="false">      
-      <attribute id="78" name="con"/>      
-      <multiplicity id="79" minimum="0" maximum="1"/>    
-    </end>    
-    <end type="TARGET" refId="12" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <association id="80">    
-    <end type="SOURCE" refId="4" navigable="false">      
-      <attribute id="81" name="p"/>      
-      <multiplicity id="82" minimum="0" maximum="1"/>    
-    </end>    
-    <end type="TARGET" refId="5" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <association id="83">    
-    <end type="SOURCE" refId="20" navigable="false">      
-      <attribute id="84" name="fb"/>      
-      <multiplicity id="85" minimum="0" maximum="1"/>    
+  <association id="76">    
+    <bendpoint x="1686" y="506"/>    
+    <end type="SOURCE" refId="19" navigable="false">      
+      <attribute id="77" name="shapes"/>      
+      <multiplicity id="78" minimum="0" maximum="2147483647"/>    
     </end>    
     <end type="TARGET" refId="9" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
-  <association id="86">    
-    <end type="SOURCE" refId="5" navigable="false">      
-      <attribute id="87" name="datos"/>      
-      <multiplicity id="88" minimum="0" maximum="1"/>    
-    </end>    
-    <end type="TARGET" refId="15" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <association id="89">    
-    <bendpoint x="1074" y="212"/>    
-    <end type="SOURCE" refId="7" navigable="false">      
-      <attribute id="90" name="shapes"/>      
-      <multiplicity id="91" minimum="0" maximum="2147483647"/>    
-    </end>    
-    <end type="TARGET" refId="10" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <association id="92">    
-    <end type="SOURCE" refId="5" navigable="false">      
-      <attribute id="93" name="tm"/>      
-      <multiplicity id="94" minimum="0" maximum="1"/>    
+  <association id="79">    
+    <end type="SOURCE" refId="11" navigable="false">      
+      <attribute id="80" name="mov"/>      
+      <multiplicity id="81" minimum="0" maximum="1"/>    
     </end>    
     <end type="TARGET" refId="2" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
-  <generalization id="95">    
-    <end type="SOURCE" refId="16"/>    
+  <nesting id="82">    
+    <bendpoint x="106" y="786"/>    
+    <end type="SOURCE" refId="11"/>    
     <end type="TARGET" refId="9"/>  
+  </nesting>  
+  <generalization id="83">    
+    <end type="SOURCE" refId="1"/>    
+    <end type="TARGET" refId="8"/>  
   </generalization>  
+  <association id="84">    
+    <end type="SOURCE" refId="5" navigable="false">      
+      <attribute id="85" name="tm"/>      
+      <multiplicity id="86" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="4" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="87">    
+    <bendpoint x="1776" y="506"/>    
+    <end type="SOURCE" refId="6" navigable="false">      
+      <attribute id="88" name="shapes"/>      
+      <multiplicity id="89" minimum="0" maximum="2147483647"/>    
+    </end>    
+    <end type="TARGET" refId="9" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="90">    
+    <end type="SOURCE" refId="2" navigable="false">      
+      <attribute id="91" name="tc"/>      
+      <multiplicity id="92" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="11" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="93">    
+    <end type="SOURCE" refId="20" navigable="false">      
+      <attribute id="94" name="con"/>      
+      <multiplicity id="95" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="12" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
   <association id="96">    
-    <end type="SOURCE" refId="9" navigable="false">      
-      <attribute id="97" name="datos"/>      
+    <end type="SOURCE" refId="5" navigable="false">      
+      <attribute id="97" name="tc"/>      
       <multiplicity id="98" minimum="0" maximum="1"/>    
     </end>    
-    <end type="TARGET" refId="15" navigable="true"/>    
+    <end type="TARGET" refId="11" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
   <classifier-display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 

@@ -47,6 +47,7 @@ public abstract class frameBase extends JFrame{
     				jp3 	= new JPanel();
     GridBagConstraints gbc	= new GridBagConstraints();
     public JLabel t1,t2;	public Partida datos;
+    public String descrip;
     
 	/**Inicializa y asigna valores a los los atributos generales del frame como tamaño, bar, layout, etc
 	 * @param unaPartida agrega los valores de la partida generada en los atributos para utilizarlo en el frame
@@ -71,6 +72,7 @@ public abstract class frameBase extends JFrame{
 		this.getContentPane().add(jp3,gbc);
 		
 		init();
+		descrip=this.Descripcion();
 	}
 	
 	/**Inicializa barra y sus items.

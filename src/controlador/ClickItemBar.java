@@ -63,13 +63,16 @@ public class ClickItemBar implements ActionListener {
         break;
  
         case 6:
-    		JOptionPane.showMessageDialog(null,"Concejos:\n"
+    		JOptionPane.showMessageDialog(null,fb.descrip
     				+ fb.Descripcion());  
         break;
  
         case 7:
-    		JOptionPane.showMessageDialog(null,"Datos del programa y documentacian:\n"
-    				+ "Mis Datos:");  
+    		JOptionPane.showMessageDialog(null,"Programa realizado para la asignatura de Programación\n"
+    				+ "							Orientada a Objetos de la Universidad de La Serena por\n"
+    				+ "							Sebastian Rojas C.\n"
+    				+ "							Para más información consultar la documentación del programa\n"
+    				+ "							en: https://github.com/sebastianjorc/POO2/master/window/doc\n");  
         break;
 
         default:

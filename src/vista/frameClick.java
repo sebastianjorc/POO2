@@ -56,13 +56,13 @@ public class frameClick extends frameBase{
 	 * @see vista.frameBase#Descripcion()
 	 */
 	public String Descripcion(){
-		return	"\tPara comenzar presione el botón \"[Start]\"\n"
-			  + "\tPara pausar su partida presione el botón \"[Stop]\"\n\n"
-			  + "Al comenzar la partida, un cuadro del tablero cambiará a color amarillo\n"
-			  + "de manera alterna, a medida que avanza el cronometro. Ud debe poder seleccionar\n"
-			  + "el cuadro antes de que este cambie de color.\n"
-			  + "Si al hacerlo el cuadro cambia a verde ud ha acertado y sumará puntaje.\n"
-		  	  + "Si el cuadro cambia a rojo ud ha fallado y se restará puntaje.\n";
+		return	"-\tPara comenzar presione el botón [Start]\n"
+			  + "-\tPara pausar su partida presione el botón [Stop]\n"
+			  + "- Al comenzar la partida, un cuadro del tablero cambiará a color amarillo de manera\n"
+			  + "  alterna, a medida que avanza el cronometro. Ud debe poder seleccionar el cuadro\n"
+			  + "  antes de que este cambie de color.\n"
+			  + "- Si al hacerlo el cuadro cambia a verde ud ha acertado y sumará puntaje.\n"
+		  	  + "- Si el cuadro cambia a rojo ud ha fallado y se restará puntaje.";
 	}
 
 }

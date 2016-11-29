@@ -9,9 +9,8 @@ public class main {
 	 */
 	@SuppressWarnings("unused")
 	public static void main(String[] args) {
-		JOptionPane.showMessageDialog( null, 
-		"¡Bienvenido! Este es un programa de entrenamiento cerebral.\n"
-		+ "Acontinuacion podrá escoger entre dos programas para ejercitar su cerebro.");
+		JOptionPane.showMessageDialog(null, "¡Bienvenido! Este es un programa de entrenamiento cerebral.\n"
+		+ "Acontinuacion podrá escoger entre dos programas para poner a prueba su reaccion.", "Bienvenida", JOptionPane.INFORMATION_MESSAGE);
 		Controlador c = new Controlador();
 		
 	}

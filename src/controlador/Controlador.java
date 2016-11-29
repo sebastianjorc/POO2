@@ -12,7 +12,11 @@ public class Controlador {
 	/**Inicializar los datos y tipo de partida a ejecutar.
 	 */
 	Controlador(){
-		unaPartida = new Partida(u.opcionesJuego(),u.validar_rut());
-		new Vista(unaPartida);
+		int juego = u.opcionesJuego();
+		if (juego==-1) System.exit(0);
+		else{
+			unaPartida = new Partida(juego,u.validar_rut());
+			new Vista(unaPartida);
+		}
 	}
 }
